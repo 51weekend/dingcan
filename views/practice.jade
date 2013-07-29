@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+
+
+  h1= title
+  p Welcome to #{title}
+
+  include nav
+
+  div.control-group
+   label(class='control-label',for='inputIcon') Email address
+   div.controls
+    div.input-prepend
+     span.add-on
+      i.icon-envelope
+    input(class='span2',id='inputIcon', type='text')
+
+  p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+  p.text-warning Etiam porta sem malesuada magna mollis euismod.
+  p.text-error Donec ullamcorper nulla non metus auctor fringilla.
+  p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
+  p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+  div.input-prepend
+   span.add-on @
+   input(class='span2',id='prependedInput',type ='text',placeholder='username')
+   input(class='span3',type='email',required='true')
+
+  p
+   button(class='btn',type='button') 默认
+  p
+   button(class='btn btn-primary',type='button') 主要
+  p
+   button(class='btn btn-info',type='button') 信息
+  p
+   button(class='btn btn-success',type='button') 成功
+  p
+   button(class='btn btn-warning',type='button') 警告
+  p
+   button(class='btn btn-danger',type='button') 危险
+  p
+   button(class='btn btn-link',type='button') 链接

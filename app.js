@@ -7,7 +7,17 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , mysql = require('mysql');
+
+
+pool  = mysql.createPool({
+  host     : '127.0.0.1',
+  user     : 'root',
+  password : 'cdggcdgg',
+  connectionLimit:5,
+  queueLimit:10
+});
 
 var app = express();
 
@@ -32,6 +42,7 @@ if ('development' == app.get('env')) {
 // auth module
 require('./routes/routes')(app, routes, require('./routes/auth'));
 require('./routes/auth-routes')(app, require('./routes/auth'));
+require('./routes/restaurant_routes')(app, require('./routes/restaurant'));
 
 
 http.createServer(app).listen(app.get('port'), function(){
