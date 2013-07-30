@@ -2,28 +2,56 @@ extends layout
 
 block content
 
-  div.row
-    div.span12 Level 1 column
-      div.row
-        div.span9 Level 2
-          form
-            fieldset
-              legend Legend
-              label Label name
-              input(type='text', placeholder='Type something…')
-              span.help-block Example block-level help text here.
-              label.checkbox
-                input(type='checkbox')
-                | Check me out
-              button.btn(type='submit') Submit
-          p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+    .row
+      .col-12.col-sm-8.col-lg-8 .col-12 .col-lg-8
+      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
+    .row
+      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
+      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
+      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
+    .row
+      .col-6.col-sm-6.col-lg-6 .col-6 .col-lg-6
+        form
+              fieldset
+                legend Legend
+                label Label name
+                input(type='text', placeholder='Type something…')
+                span.help-block Example block-level help text here.
+                label.checkbox
+                  input(type='checkbox')
+                  | Check me out
+                button.btn(type='submit') Submit
+            p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+            p.text-warning Etiam porta sem malesuada magna mollis euismod.
+            p.text-error Donec ullamcorper nulla non metus auctor fringilla.
+            p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
+            p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      .col-6.col-sm-6.col-lg-6 .col-6 .col-lg-6
+        p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
           p.text-warning Etiam porta sem malesuada magna mollis euismod.
           p.text-error Donec ullamcorper nulla non metus auctor fringilla.
           p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
           p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        div.span3 Level 2
-          p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-          p.text-warning Etiam porta sem malesuada magna mollis euismod.
-          p.text-error Donec ullamcorper nulla non metus auctor fringilla.
-          p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
-          p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+    script(type="text/javascript").
+      $( document ).ready(function(){
+        console.log( "ready!" );
+          $.ajax({
+              url: "/restaurants",
+              data: {
+                  id: 123
+              },
+              type: "GET",
+              dataType : "json",
+              success: function( json ) {
+                alert(json.restaurants[0].name);
+                 alert("success");
+              },
+              error: function( xhr, status ) {
+                  alert( "Sorry, there was a problem!" );
+              },
+              complete: function( xhr, status ) {
+                  alert( "The request is complete!" );
+              }
+          });
+      });
