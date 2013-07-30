@@ -21,11 +21,12 @@ block content
                   input(type='checkbox')
                   | Check me out
                 button.btn(type='submit') Submit
-            p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-            p.text-warning Etiam porta sem malesuada magna mollis euismod.
-            p.text-error Donec ullamcorper nulla non metus auctor fringilla.
-            p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
-            p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            #restaurant
+              p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+              p.text-warning Etiam porta sem malesuada magna mollis euismod.
+              p.text-error Donec ullamcorper nulla non metus auctor fringilla.
+              p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
+              p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
       .col-6.col-sm-6.col-lg-6 .col-6 .col-lg-6
         p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
           p.text-warning Etiam porta sem malesuada magna mollis euismod.
@@ -45,7 +46,14 @@ block content
               dataType : "json",
               success: function( json ) {
                 alert(json.restaurants[0].name);
-                 alert("success");
+                alert("success");
+                var html = "";
+                for(var i = 0 ;i<json.restaurants.length;i++){
+                  html = "<p class=‘text-info’>" + json.restaurants[i].name+"</p>"+
+                         "<p class='text-success'>" + json.restaurants[i].address+"</p>"+
+                         "<p class='text-warning'>" + json.restaurants[i].phone+"</p>"
+                }
+                $('#restaurant').html(html);
               },
               error: function( xhr, status ) {
                   alert( "Sorry, there was a problem!" );
