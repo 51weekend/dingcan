@@ -19,6 +19,8 @@ pool  = mysql.createPool({
   queueLimit:10
 });
 
+uuid = require('node-uuid');
+
 var app = express();
 
 // all environments

@@ -3,8 +3,8 @@ extends layout
 block content
 
     .row
-      .col-12.col-sm-8.col-lg-8 .col-12 .col-lg-8
-      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
+      .col-12.col-sm-8.col-lg-8
+      .col-6.col-sm-4.col-lg-4
     .row
       .col-3.col-sm-3.col-lg-3
       .col-6.col-sm-6.col-lg-6
@@ -25,11 +25,11 @@ block content
               success: function( json ) {
                 var html = "";
                 for(var i = 0 ;i<json.restaurants.length;i++){
-                    html += "<div class='row'>" +
+                    html += "<div class='row panel panel-info'>" +
                              "<div class='col-6 col-sm-6 col-lg-6'>"+
                                "<dl>"+
-                                 "<h3><a href='/rest/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a><b>家常菜</b></h3>"+
-                                 "<span><a href='/rest/"+json.restaurants[i].id+"'>看菜谱</a></span>" +
+                                 "<h3><a href='/menu/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a><b>家常菜</b></h3>"+
+                                 "<span><a href='/menu/"+json.restaurants[i].id+"'>看菜谱</a></span>" +
                                  "<p class='text-warning'>电话：" + json.restaurants[i].phone+"</p>" +
                                "</dl>"+
                                "<p><span>人均消费:￥55元</sapn></p>"+
