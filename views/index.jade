@@ -6,37 +6,15 @@ block content
       .col-12.col-sm-8.col-lg-8 .col-12 .col-lg-8
       .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
     .row
-      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
-      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
-      .col-6.col-sm-4.col-lg-4 .col-6 .col-lg-4
-    .row
-      .col-6.col-sm-6.col-lg-6 .col-6 .col-lg-6
-        form
-              fieldset
-                legend Legend
-                label Label name
-                input(type='text', placeholder='Type something…')
-                span.help-block Example block-level help text here.
-                label.checkbox
-                  input(type='checkbox')
-                  | Check me out
-                button.btn(type='submit') Submit
-            #restaurant
-              p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-              p.text-warning Etiam porta sem malesuada magna mollis euismod.
-              p.text-error Donec ullamcorper nulla non metus auctor fringilla.
-              p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
-              p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      .col-6.col-sm-6.col-lg-6 .col-6 .col-lg-6
-        p.muted Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-          p.text-warning Etiam porta sem malesuada magna mollis euismod.
-          p.text-error Donec ullamcorper nulla non metus auctor fringilla.
-          p.text-info Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.
-          p.text-success Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      .col-3.col-sm-3.col-lg-3
+      .col-6.col-sm-6.col-lg-6
+        #restaurant
+      .col-3.col-sm-3.col-lg-3
+             
+      
 
     script(type="text/javascript").
-      $( document ).ready(function(){
-        console.log( "ready!" );
+      function loadRestaurants (argument) {
           $.ajax({
               url: "/restaurants",
               data: {
@@ -45,21 +23,42 @@ block content
               type: "GET",
               dataType : "json",
               success: function( json ) {
-                alert(json.restaurants[0].name);
-                alert("success");
                 var html = "";
                 for(var i = 0 ;i<json.restaurants.length;i++){
-                  html = "<p class=‘text-info’>" + json.restaurants[i].name+"</p>"+
-                         "<p class='text-success'>" + json.restaurants[i].address+"</p>"+
-                         "<p class='text-warning'>" + json.restaurants[i].phone+"</p>"
+                    html += "<div class='row'>" +
+                             "<div class='col-6 col-sm-6 col-lg-6'>"+
+                               "<dl>"+
+                                 "<h3><a href='/rest/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a><b>家常菜</b></h3>"+
+                                 "<span><a href='/rest/"+json.restaurants[i].id+"'>看菜谱</a></span>" +
+                                 "<p class='text-warning'>电话：" + json.restaurants[i].phone+"</p>" +
+                               "</dl>"+
+                               "<p><span>人均消费:￥55元</sapn></p>"+
+                               "<p>招牌菜:宫爆鸡丁 京酱肉丝 杂酱面</p>"+
+                             "</div>"+
+                            "</div>";
+                  
                 }
                 $('#restaurant').html(html);
+
+
               },
               error: function( xhr, status ) {
-                  alert( "Sorry, there was a problem!" );
               },
               complete: function( xhr, status ) {
-                  alert( "The request is complete!" );
+                  $("#restaurant div div").each(function(){
+                    $(this).click(function(){
+                      alert("ok");
+                    });
+                });
               }
           });
+      }
+      $( document ).ready(function(){
+        loadRestaurants();
+        console.log( "ready!" );
+        
       });
+
+      
+
+      

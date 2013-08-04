@@ -5,7 +5,7 @@ exports.restaurants = function (req, res) {
 	  connection.query( 'SELECT id,name,address,longitude,latitude,phone,description FROM fantuan.restaurant', function(err, rows) {
 	    // And done with the connection.
 	    connection.end();
-
+	    
 		res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	    res.json({restaurants: rows});
 
