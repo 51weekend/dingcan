@@ -6,4 +6,13 @@ html
     script(type="text/javascript", src="http://code.jquery.com/jquery.js")
     script(type="text/javascript", src="/js/bootstrap.js")
   body
+    
+
+    .navbar.navbar-inverse
+      a.navbar-brand(href='#') Brand
+      p.navbar-text.pull-right
+        | Signed in as 
+        a.navbar-link(href='#') Mark Otto
+      button.btn.btn-default.navbar-btn.pull-right(type='button') Sign in
+
     block content
