@@ -1,0 +1,450 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"page",
+				"pageClick"
+			],
+			[
+				"total",
+				"totalPages"
+			],
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
+				"tips",
+				"tips_error"
+			],
+			[
+				"funct",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 16,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 173.0,
+		"selected_items":
+		[
+			[
+				"save",
+				"Project: Save As"
+			],
+			[
+				"add folder",
+				"Project: Add Folder"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"syn jq",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"sync ",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"File:",
+				"File: Close All"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/app.js",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/views/index.jade",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-aop.xml",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/statistics/StatisticsType.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/statistics/StatisticsInterceptor.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/statistics/StatisticsLog.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-core-bean.xml",
+		"/C/dev/tool/java/workspace/family360/family360-api/src/main/resources/applicationContext-core.xml",
+		"/E/work/source/UI-Sample/ui-library/tips/tips.html",
+		"/E/work/Channel News/settings.default",
+		"/C/Users/jasonCheng/Downloads/flowplayer/example/index.html",
+		"/E/work/source/UI-Sample/ui-library/tips/js/tips-0.0.1.js",
+		"/C/dev/ftp/jdiskexplorer3.1/applet_ftp_explorer.html",
+		"/C/dev/ftp/jdiskexplorer3.1/applet_ftp_explorer.js",
+		"/C/dev/ftp/ZUpload/sample.html",
+		"/C/dev/ftp/jdiskexplorer3.1/server-side/jsp/explorer.jsp",
+		"/C/dev/ftp/sample.html",
+		"/C/Users/jasonCheng/Downloads/flowplayer-5.4.3/index.html",
+		"/C/Users/jasonCheng/Downloads/flowplayer/README.txt",
+		"/C/Users/jasonCheng/Downloads/flowplayer/example/jquery-1.8.3.min.js",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/log.home_IS_UNDEFINED/2013-07-19/ugc-error.log",
+		"/C/Users/jasonCheng/Downloads/jquery_jeditable-master/custom.html",
+		"/C/Users/jasonCheng/Downloads/jquery-validation-1.11.1/demo/index.html",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/src/main/webapp/WEB-INF/views/event/addEvent.html",
+		"/C/work/MediaCorp.UGC/UI/design2.0/html/Config Metadata.html",
+		"/C/Users/jasonCheng/Downloads/jquery_jeditable-master/custom_autocomplete.html",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/src/main/webapp/WEB-INF/resources/js/geolocation/readme.md",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/log.home_IS_UNDEFINED/2013-07-18/ugc-converter.log",
+		"/C/work/MediaCorp.UGC/UI/design2.0/add event/add_events.html",
+		"/C/dev/tool/java/workspace/conversant-converter/trunk/pom.xml",
+		"/C/opt/app/swiftsync/logs/2013-07-16/error.log.2013-07-16",
+		"/C/opt/app/swiftsync/logs/2013-07-16/sync-queue.log.2013-07-16",
+		"/C/opt/app/swiftsync/logs/2013-07-16/converter.log.2013-07-16",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/logs/mediacorpugc.log",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/dao/ConfigDaoManager.java",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/logs/mediacorpugc.log",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/Refreshable.java",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/src/main/java/cn/com/conversant/mediacorpugc/entity/Attachment.java",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/ugc.bat",
+		"/C/dev/tool/java/workspace/MediaCorp/trunk/pom.xml",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/1.log",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/log.home_IS_UNDEFINED/2013-07-03/swiftsync-zmq-queue.log.2013-07-03",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/contexts/ugc.xml",
+		"/C/Users/jasonCheng/Desktop/Interface-admin.md",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/start.bat",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/contexts/swiftsync.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/deploy/conf/swiftsync_server_test.properties",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/deploy/bin/env.conf",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/deploy/conf/jetty9/jetty.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-web-admin/conf/jetty/jetty.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-web-admin/conf/jetty9/jetty.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-web/conf/jetty9/jetty.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/UpdateNote.txt",
+		"//SambaServer/Product/Release/SwiftSync/Server/20130628/UpdateNote.txt",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-web/conf/jetty/jetty.xml",
+		"/C/Users/jasonCheng/Desktop/EventClient.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/authen-mapper.xml",
+		"/C/dev/tool/java/workspace/family360/family360-deliver/src/main/java/com/snda/family/core/extend/service/DeliverService.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/queue/redis/PubSubClient.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/queue/redis/SubscribeHandler.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/queue/redis/Publisher.java",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/queue/redis/PubSub.java",
+		"/C/dev/tool/java/workspace/MediaCorp.UGC/trunk/src/main/resources/ugc-quartz.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/assembly-application-server.xml",
+		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/resources/user-sql.xml",
+		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/resources/UserMapper.xml",
+		"/C/Users/jasonCheng/Documents/GitHub/twitter4j/twitter4j-core/pom.xml",
+		"/C/Users/jasonCheng/Dropbox/书/技术/source/ClientLogAspectTest.java",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/build.bat",
+		"/C/dev/tool/java/workspace/MediaCorp.UGC/trunk/bin/eclipse.bat",
+		"/C/work/MediaCorp.UGC/Design/20130613.xml",
+		"/C/Users/jasonCheng/Desktop/51weekend-getMessage",
+		"/C/work/MediaCorp.UGC/Requirement/UGC_test.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/releaseNote.txt",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/sql/mysql/i6.sql",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/meta/FeedType.java",
+		"/C/Users/jasonCheng/Downloads/jetty-http.xml",
+		"/C/Users/jasonCheng/Downloads/jetty-https.xml",
+		"/C/dev/tool/java/workspace/FW_096SAS/deploy/bin/start.sh",
+		"/C/dev/tool/java/workspace/FW_096SAS/deploy/bin/functions.sh",
+		"/C/Users/jasonCheng/Downloads/jetty.xml",
+		"/C/Users/jasonCheng/Downloads/start.ini",
+		"/C/Users/jasonCheng/Downloads/webdefault.xml",
+		"/C/dev/tool/java/workspace/family360/deploy/conf/jetty/webdefault.xml",
+		"/C/dev/tool/java/workspace/FW_096SAS/deploy/conf/log4j.xml",
+		"/C/dev/tool/java/workspace/FW_096SAS/deploy/bin/stop.sh",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/deploy/bin/service",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/target/env.conf",
+		"/C/Users/jasonCheng/Downloads/realm.properties",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/build.bat",
+		"/C/dev/swiftsync-server/1.txt",
+		"/C/22.log",
+		"/C/opt/app/jetty/logs/2013-05/logAspect.log.2013-05-16",
+		"/C/Users/jasonCheng/Desktop/TestController.java",
+		"/C/Users/jasonCheng/Desktop/BaseController.java",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/pom.xml",
+		"/C/Users/jasonCheng/Desktop/start.sh",
+		"/C/Users/jasonCheng/Downloads/pom.xml",
+		"/C/Users/jasonCheng/.m2/settings.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/conf/settings.properties",
+		"/C/dev/tool/java/workspace/family360/pom.xml",
+		"/C/Users/jasonCheng/Desktop/service",
+		"/C/dev/tool/java/workspace/family360/family360-manager/src/main/resources/applicationContext-manager.xml",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/DBVisitControl.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/model/TrustDegree.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/service/base/ConfigurationProperties.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-properties.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/assembly-application-server.xml",
+		"/C/dev/tool/java/workspace/family360/deploy/bin/service",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/start.ini",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/etc/jetty.conf",
+		"/C/dev/tool/java/workspace/family360/family360-core/pom.xml",
+		"/C/dev/tool/java/workspace/family360/family360-common/target/classes/redis-config.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/src/main/webapp/WEB-INF/web.xml",
+		"/C/dev/tool/java/workspace/family360/family360-notify/src/main/java/com/snda/family/notify/service/NotifyPubSub.java",
+		"/C/Users/jasonCheng/Desktop/converter",
+		"/C/dev/converter.sh",
+		"/C/dev/tool/java/workspace/family360/family360-common/src/main/resources/redis-config.xml",
+		"/C/dev/tool/java/workspace/family360/family360-api/src/main/java/com/snda/family/app/controller/PositionController.java",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/bin/jetty.sh",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/bin/jetty.bat",
+		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/java/com/snda/family/core/domain/ChatMessage.java",
+		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/java/com/snda/family/core/domain/UserAuthentication.java",
+		"/C/Users/jasonCheng/Documents/GitHub/credis/pom.xml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\dev\\tool\\java\\workspace\\family360",
+			"",
+			"C:\\dev\\tool\\java\\workspace\\family360\\",
+			"C:\\dev\\tool\\java\\workspace\\family360\\deploy",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mysql",
+			"\"",
+			");'>",
+			"\"",
+			"ready",
+			"add",
+			"			   \n",
+			">",
+			"<",
+			"button",
+			"    			\n",
+			"})\n",
+			"(){\n",
+			"	\n",
+			"		\n",
+			"a1",
+			"	\n",
+			"\";\n",
+			"resources",
+			"../",
+			"\\",
+			"                  \n",
+			"\");\n",
+			"				\n",
+			"\n			",
+			"\\",
+			"resources",
+			"\");\n",
+			"   /*{\n                         url: \"information-1280x960.png\"\n                         },*/",
+			"\",\n",
+			">\n",
+			"video",
+			"12d4b0e4-745f-4b5d-81a9-e9dac82fa1d3.flv",
+			"c60e28d0-3209-4121-8e2a-0d97ecb778ca.flv",
+			"503",
+			"autogrow",
+			"charcounter",
+			"commentForm",
+			"update",
+			"Twitter Event ",
+			"Filenot",
+			"rather be in school right now.",
+			"&&&&&&&&&&&&&",
+			"OWNER_ID",
+			"BASE_LIB_PATH",
+			"\n",
+			"rootAppender",
+			"fileDao",
+			"Cache",
+			"exception",
+			"testGoodLogin",
+			"key",
+			"project.env",
+			"family360.properties",
+			"CLASSPATH",
+			"swiftsync-server",
+			"${project.env}.properties",
+			"project.env",
+			"PROJECT_ENV",
+			"assembly",
+			"JedisPoolConfig",
+			"publish",
+			"jedisPool",
+			"DeliverService",
+			"qu",
+			"qun",
+			"getCacheProhibitVisiErrorThreshold",
+			"CACHE_PROHIBIT_VISIT_ERROR_THRESHOLD",
+			"cache.prohibitVisit.errorThreshold",
+			"pt(list)",
+			"java",
+			"JAVA",
+			"releases",
+			"distributionManagement",
+			"JSON.parseObject",
+			"fastjson",
+			"password"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"../media/",
+			"swiftsync-server1",
+			"DeliverService"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"app.js",
+				"app.js"
+			],
+			[
+				"",
+				"README.md"
+			],
+			[
+				"inde",
+				"views/index.jade"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 184.0,
+	"status_bar_visible": true
+}

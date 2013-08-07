@@ -4,19 +4,20 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path')
-  , mysql = require('mysql');
+  , routes  = require('./routes')
+  , user    = require('./routes/user')
+  , http    = require('http')
+  , path    = require('path')
+  , mysql   = require('mysql');
 
 
 pool  = mysql.createPool({
-  host     : '127.0.0.1',
-  user     : 'root',
-  password : 'cdggcdgg',
-  connectionLimit:5,
-  queueLimit:10
+  host            : '42.121.117.61',
+  user            : 'dingcan',
+  password        : 'woshiniye!82',
+  database        : 'dingcan',
+  connectionLimit :5,
+  queueLimit      :10
 });
 
 uuid = require('node-uuid');
