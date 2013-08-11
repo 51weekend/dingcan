@@ -30,33 +30,52 @@ exports.menu = function (req,res) {
 		connection.query('insert into current_order set userId = ?, restaurantId = ?, orderKey = ? , type = ?',[messages[0],req.params.restaurant_id,public_order_key, 'public'],function  (err,result) {
 			// body...
 			if(err){
-				console.log(err);
 				connection.end();
 				res.render('error');
 				return;
 			}
 
-			connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant_id],function(err,rows) {
-			// body...
-			connection.end();
-			//res.setHeader('Content-Type','application/json;charset=UTF-8');
-			res.render('menu', {
-                menus: rows,
-                public_order_key:public_order_key,
-                restaurant:req.params.restaurant_id
-            });
-		})
+			getMenu(req.params.restaurant_id,public_order_key,function (err,menus) {
+				// body...
+				if(err){
+					res.render('err',{});
+				}
+				res.render('menu', {
+	                menus: menus,
+	                public_order_key:public_order_key,
+	                restaurant:req.params.restaurant_id
+	            });
+			})
 		})
 
 		
 	});
 }
 
-exports.publicOrder = function (req,res) {
+function getMenu (restaurantId,public_order_key,next) {
 	// body...
-	//TODO 去掉这个方法,没有任何作用.
-	res.json({restaurant:req.params.restaurant});
+	pool.getConnection(function (err,connection) {
+		// body...
+		if(err){
+			return next(err);
+		}
+
+		connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],function menus(err,menus) {
+				// body...
+				if(err){
+					return next(err);
+				}
+				
+				next(err,menus);
+		})
+
+	})
 }
+
+exports.publicOrder = function (req,res){
+	console.log(req.params.public_order_key);
+}
+
 
 exports.orderLink =  function (req,res) {
 	// body...

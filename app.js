@@ -46,7 +46,7 @@ if ('development' == app.get('env')) {
 // auth module
 require('./routes/routes')(app, routes, auth);
 require('./routes/auth-routes')(app, auth);
-require('./routes/restaurant_routes')(app, require('./routes/restaurant'),auth);
+require('./routes/restaurant_routes')(app, require('./routes/restaurant'));
 
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -51,18 +51,17 @@ exports.login = function (req, res) {
  
 }
 
-exports.checkLogin = function(req, res, next){
+exports.checkLogin = function(req, res){
 
-  console.log(req.cookies.login_key);
+  res.setHeader('Content-Type', 'application/json;charset=UTF-8');
   if (!req.cookies.login_key) {
-    res.setHeader('Content-Type', 'application/json;charset=UTF-8');
     res.statusCode = 401;
     res.json({error:{message:'need to login!'}});
     return;
   };
-
-  next();
-
+  
+  res.statusCode = 200;
+  res.json({});
 }
 
 

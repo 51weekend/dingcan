@@ -52,7 +52,7 @@ block content
                              "</div>"+
                              "<div class='col-4 col-sm-4 col-lg-4'>"+
                              "<br><p>"+
-                             "<button type='button' id='public_order' onClick='publicOrder(this);' class='btn btn-primary' restaurant='"+json.restaurants[i].id+"'>集体订餐</button>"+
+                             "<button type='button' id='public_order' onClick='checkLogin(this);' class='btn btn-primary' restaurant='"+json.restaurants[i].id+"'>集体订餐</button>"+
                              "</p>"+
                              "</div>"+
                             "</div>";
@@ -73,20 +73,20 @@ block content
           });
       }
 
-      function publicOrder(obj){
+      function checkLogin(obj){
         $.ajax({
-          url: '/public/order',
+          url: '/islogin',
           type: 'get',
           dataType: 'json',
           data: {restaurant: $(obj).attr('restaurant')},
           complete: function(xhr, textStatus) {
           },
           success: function(data, textStatus, xhr) {
-            alert($(obj).attr('restaurant'))
             self.location = "/menu/"+$(obj).attr('restaurant');
           },
           error: function(xhr, textStatus, errorThrown) {
             // alert(xhr.responseText);
+            alert("error");
           },
           statusCode: {
             401: function() {

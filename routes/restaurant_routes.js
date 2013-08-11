@@ -1,11 +1,11 @@
-module.exports = function (app,obj,auth) {
+module.exports = function (app,obj) {
   // auth form on site
   app.get('/restaurants', obj.restaurants);
 
   app.get('/menu/:restaurant_id',obj.menu);
 
-  app.post('/order/link',obj.orderLink);
+  app.get('/public/order/:public_order_key',obj.publicOrder);
 
-  app.get('/public/order',auth.checkLogin,obj.publicOrder)
+  app.post('/order/link',obj.orderLink);
 
 }
