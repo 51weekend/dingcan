@@ -2,7 +2,7 @@ exports.restaurants = function (req, res) {
 
 	pool.getConnection(function(err, connection) {
 	  // Use the connection
-	  connection.query( 'SELECT id,name,address,longitude,latitude,phone,description FROM fantuan.restaurant', function(err, rows) {
+	  connection.query( 'SELECT id,name,address,longitude,latitude,phone,description FROM restaurant', function(err, rows) {
 	    // And done with the connection.
 	    connection.end();
 	    
@@ -20,7 +20,7 @@ exports.menu = function (req,res) {
 	pool.getConnection(function (err,connection) {
 		// body...
 		console.log(req.params.restaurant_id);
-		connection.query('SELECT id,name,price,image,description,restaurant FROM fantuan.menu where restaurant = ? ',[req.params.restaurant_id],function(err,rows) {
+		connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant_id],function(err,rows) {
 			// body...
 			connection.end();
 			console.log(err);
@@ -34,6 +34,9 @@ exports.menu = function (req,res) {
             });
 		})
 	});
+}
+
+exports.publicOrder = function (req,res) {
 }
 
 exports.orderLink =  function (req,res) {

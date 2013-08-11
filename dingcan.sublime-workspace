@@ -27,24 +27,24 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 16,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 147.0,
 		"selected_items":
 		[
 			[
 				"save",
 				"Project: Save As"
+			],
+			[
+				"add  ",
+				"Project: Add Folder"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
 			],
 			[
 				"add folder",
@@ -67,7 +67,7 @@
 				"File: Close All"
 			]
 		],
-		"width": 464.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -84,6 +84,7 @@
 	},
 	"file_history":
 	[
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/README.md",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/app.js",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/views/index.jade",
@@ -331,39 +332,6 @@
 			"sheets":
 			[
 			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "README.md",
-					"settings":
-					{
-						"buffer_size": 16,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
 		}
 	],
 	"incremental_find":
@@ -383,18 +351,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -438,11 +399,19 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"blog",
+				"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/blog.sublime-project"
+			],
+			[
+				"",
+				"/Users/chengdong/dev/gitHub/djcode/dingcan/dingcan.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 184.0,

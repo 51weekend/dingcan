@@ -19,7 +19,9 @@ exports.checkLogin = function(req, res, next){
   console.log(req.cookies.user_login_key);
 
   if (!req.cookies.user_login_key) {
-    res.redirect('/login');
+    res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+    res.statusCode = 401;
+    res.json({error:{message:'need to login!'}});
     return;
   };
 

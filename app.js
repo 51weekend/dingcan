@@ -5,10 +5,11 @@
 
 var express = require('express')
   , routes  = require('./routes')
-  , user    = require('./routes/user')
   , http    = require('http')
   , path    = require('path')
-  , mysql   = require('mysql');
+  , mysql   = require('mysql')
+  , user    = require('./routes/user')
+  , auth    = require('./routes/auth');
 
 
 pool  = mysql.createPool({
@@ -43,9 +44,9 @@ if ('development' == app.get('env')) {
 }
 
 // auth module
-require('./routes/routes')(app, routes, require('./routes/auth'));
-require('./routes/auth-routes')(app, require('./routes/auth'));
-require('./routes/restaurant_routes')(app, require('./routes/restaurant'));
+require('./routes/routes')(app, routes, auth);
+require('./routes/auth-routes')(app, auth);
+require('./routes/restaurant_routes')(app, require('./routes/restaurant'),auth);
 
 
 http.createServer(app).listen(app.get('port'), function(){

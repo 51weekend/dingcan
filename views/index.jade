@@ -3,21 +3,25 @@ extends layout
 block content
 
     .row
-      .col-12.col-sm-8.col-lg-8
-      .col-6.col-sm-4.col-lg-4
-    .row
       .col-3.col-sm-3.col-lg-3
-        #myModal.modal.fade
+        #login.modal.fade
             .modal-dialog
               .modal-content
                 .modal-header
                   button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-                  h4.modal-title Modal title
+                  h4.modal-title 登录
                 .modal-body
-                  p One fine body…
+                  form#login_form.form-horizontal
+                    p
+                      input#email.form-control(type='email', name='email', placeholder='邮箱', required='required')
+                    p
+                      input#password.form-control(type='password', name='password', placeholder='密码', required='required')
+                    p
+                      button#forget_password.btn.btn-link(type='button') 忘记密码
+                      button#register.btn.btn-link(type='button') 注册
                 .modal-footer
-                  button.btn.btn-default(type='button', data-dismiss='modal') Close
-                  button.btn.btn-primary(type='button') Save changes
+                  button.btn.btn-default(type='button', data-dismiss='modal') 取消
+                  #login_btn.button.btn.btn-primary(type='button') 登录
       .col-6.col-sm-6.col-lg-6
         #restaurant
       .col-3.col-sm-3.col-lg-3
@@ -37,14 +41,17 @@ block content
                 var html = "";
                 for(var i = 0 ;i<json.restaurants.length;i++){
                     html += "<div class='row panel panel-info'>" +
-                             "<div class='col-6 col-sm-6 col-lg-6'>"+
+                             "<div class='col-8 col-sm-8 col-lg-8'>"+
                                "<dl>"+
-                                 "<h3><a href='/menu/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a><b>家常菜</b></h3>"+
+                                 "<h3><a href='/menu/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a></h3>"+
                                  "<span><a href='/menu/"+json.restaurants[i].id+"'>看菜谱</a></span>" +
                                  "<p class='text-warning'>电话：" + json.restaurants[i].phone+"</p>" +
                                "</dl>"+
-                               "<p><span>人均消费:￥55元</sapn></p>"+
-                               "<p>招牌菜:宫爆鸡丁 京酱肉丝 杂酱面</p>"+
+                             "</div>"+
+                             "<div class='col-4 col-sm-4 col-lg-4'>"+
+                             "<br><p>"+
+                             "<button type='button' id='public_order' onClick='publicOrder(this);' class='btn btn-primary' restaurant='"+json.restaurants[i].id+"'>集体订餐</button>"+
+                             "</p>"+
                              "</div>"+
                             "</div>";
                   
@@ -58,16 +65,62 @@ block content
               complete: function( xhr, status ) {
                   $("#restaurant div div").each(function(){
                     $(this).click(function(){
-                      alert("ok");
                     });
-                });
+                  });
               }
           });
+      }
+
+      function publicOrder(obj){
+        $.ajax({
+          url: '/public/order',
+          type: 'get',
+          dataType: 'json',
+          data: {restaurant: $(obj).attr('restaurant')},
+          complete: function(xhr, textStatus) {
+          },
+          success: function(data, textStatus, xhr) {
+            alert("success");
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            // alert(xhr.responseText);
+          },
+          statusCode: {
+            401: function() {
+              $('#login').modal();
+            }
+          }
+        });
+        
       }
       $( document ).ready(function(){
         loadRestaurants();
         console.log( "ready!" );
-        $('#myModal').modal();
+
+        $("#login_form").validate({
+          rules: {
+            password: "required",
+            email: {
+              required: true,
+              email: true
+            }
+          },
+          messages: {
+            password: "请输入密码.",
+            email: {
+              required: "请输入你的注册邮箱.",
+              email: "邮箱格式为: name@domain.com"
+            }
+          }
+        });
+        $('#login_btn').click(function () {
+          if(!$("#login_form").valid()){
+            return;
+          }
+          // body...
+          $('#login').modal('hide')
+
+        })
       });
 
       
