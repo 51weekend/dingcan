@@ -8,15 +8,53 @@ exports.login = function (req, res) {
 
   // navigation cookie for redirect after auth
   //res.cookie('back_after_auth', '/');
-
+  
   // render login
-  res.cookie('user_login_key', "loginname", {maxAge:600000, httpOnly:true, path:'/', secure:true});
-  res.render('login', {});
+  pool.getConnection(function (err,connection) {
+    // body...
+    
+    connection.query('SELECT id, username,nickname FROM user where username = ? and password = ?',[req.body.username, req.body.password],function(err,rows) {
+      // body...
+      connection.end();
+      if(err){
+        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        res.statusCode = 401;
+        res.json({error:{message:"login error"}});
+        return;
+      }
+      if(rows == null || rows.length == 0){
+        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        res.statusCode = 401;
+        res.json({error:{message:"用户名或密码错误!"}});
+        return;
+      }
+      pool.getConnection(function (error,connection) {
+        // body...
+        var login_key = uuid.v1();
+        connection.query('insert into user_token set userId = ?, token =?',[rows[0].id,login_key],function (err,result) {
+          connection.end();
+          // body...
+          if(err){
+            res.json({error:{message:"login error!"}});
+            return;
+          }
+         
+          res.cookie('login_key', login_key);
+          res.cookie('login_message',rows[0].id+","+rows[0].nickname);
+          res.json({login_user_nickname:rows[0].nickname})
+        })
+        
+      });
+      
+    })
+  });
+ 
 }
 
 exports.checkLogin = function(req, res, next){
 
-  if (!req.cookies.user_login_key) {
+  console.log(req.cookies.login_key);
+  if (!req.cookies.login_key) {
     res.setHeader('Content-Type', 'application/json;charset=UTF-8');
     res.statusCode = 401;
     res.json({error:{message:'need to login!'}});

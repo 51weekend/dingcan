@@ -17,26 +17,35 @@ exports.restaurants = function (req, res) {
 
 exports.menu = function (req,res) {
 	// body...
-	pool.getConnection(function (err,connection) {
-		// body...
-		console.log(req.params.restaurant_id);
-		connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant_id],function(err,rows) {
-			// body...
-			connection.end();
-			console.log(err);
-			if(err){
-				res.render('error',{error:error});
-			}
-			//res.setHeader('Content-Type','application/json;charset=UTF-8');
-			res.render('menu', {
-                menus: rows,
-                restaurant:req.params.restaurant_id
-            });
-		})
-	});
+	
 }
 
 exports.publicOrder = function (req,res) {
+	// body...
+	var login_message = req.cookies.login_message
+	if(!login_message){
+		res.render('error',{error:{message:"need login"}});
+	}
+
+	var messages = login_message.split(",");
+	console.log(messages[0]);
+
+	// pool.getConnection(function (err,connection) {
+
+	// 	// body...
+	// 	connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant],function(err,rows) {
+	// 		// body...
+	// 		connection.end();
+	// 		if(err){
+	// 			res.render('error',{error:error});
+	// 		}
+	// 		//res.setHeader('Content-Type','application/json;charset=UTF-8');
+	// 		res.render('menu', {
+ //                menus: rows,
+ //                restaurant:req.params.restaurant
+ //            });
+	// 	})
+	// });
 }
 
 exports.orderLink =  function (req,res) {

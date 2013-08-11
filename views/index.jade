@@ -17,6 +17,8 @@ block content
                     p
                       input#password.form-control(type='password', name='password', placeholder='密码', required='required')
                     p
+                      #login_error
+                    p
                       button#forget_password.btn.btn-link(type='button') 忘记密码
                       button#register.btn.btn-link(type='button') 注册
                 .modal-footer
@@ -117,8 +119,35 @@ block content
           if(!$("#login_form").valid()){
             return;
           }
+          $.ajax({
+            url: '/login',
+            type: 'POST',
+            dataType: 'json',
+            data: {username: $("#email").val(),password:$("#password").val()},
+            complete: function(xhr, textStatus) {
+              //called when complete
+            },
+            success: function(data, textStatus, xhr) {
+              //called when successful
+              $('#login').modal('hide')
+              $("#login_user_nickname").html(data.login_user_nickname);
+              // self.location='top.htm';
+            },
+            error: function(xhr, textStatus, errorThrown) {
+              //called when there is an error
+
+              var errorMessage = JSON.parse(xhr.responseText);
+            
+              var error = '<div class="alert">'+
+                '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                errorMessage.error.message+
+              "</div>";
+              $("#login_error").html(error);
+            }
+          });
+          
           // body...
-          $('#login').modal('hide')
+          
 
         })
       });
