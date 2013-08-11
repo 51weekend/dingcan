@@ -82,7 +82,8 @@ block content
           complete: function(xhr, textStatus) {
           },
           success: function(data, textStatus, xhr) {
-            alert("success");
+            alert($(obj).attr('restaurant'))
+            self.location = "/menu/"+$(obj).attr('restaurant');
           },
           error: function(xhr, textStatus, errorThrown) {
             // alert(xhr.responseText);
@@ -145,9 +146,6 @@ block content
               $("#login_error").html(error);
             }
           });
-          
-          // body...
-          
 
         })
       });

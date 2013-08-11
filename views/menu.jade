@@ -4,8 +4,9 @@ block content
 	.row
 		.col-3.col-sm-3.col-lg-3
 		.col-6.col-sm-6.col-lg-6
-			button.btn.btn-success(id='generateOrderUrl', type='button', value='#{restaurant}') 生成订餐链接 
-			.text-success(id='orderLink')
+			button.btn.btn-success(id='generateOrderUrl', type='button', value='#{restaurant}') 复制订餐地址给大家 
+			.text-success(id='orderLink') http://127.0.0.1:3000/public/order/#{public_order_key}
+			br
 		.col-3.col-sm-3.col-lg-3
 	each menu in menus
 		.row
@@ -19,24 +20,12 @@ block content
 					.col-3.col-sm-3.col-lg-3(id=#{menu.id},value='#{menu.id}')
 			.col-3.col-sm-3.col-lg-3
 
+
+
 	script(type="text/javascript")
 		jQuery(document).ready(function($) {
 			// Stuff to do as soon as the DOM is ready;
 			$("#generateOrderUrl").click(function () {
-				$.ajax({
-					url: '/order/link',
-					type: 'POST',
-					dataType: 'json',
-					data: {restaurant: $("#generateOrderUrl").val()},
-					complete: function(xhr, textStatus) {
-
-					},
-					success: function(data, textStatus, xhr) {
-						$("#orderLink").html("<a href='http://127.0.0.1:3000/order/link/'"+data.link_code+">"+"http://127.0.0.1:3000/order/link/"+data.link_code+"</a>");
-					},
-					error: function(xhr, textStatus, errorThrown) {
-
-					}
-				});
+				alert($("#orderLink").html());
 			})
 		});

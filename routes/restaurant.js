@@ -17,35 +17,45 @@ exports.restaurants = function (req, res) {
 
 exports.menu = function (req,res) {
 	// body...
-	
-}
-
-exports.publicOrder = function (req,res) {
-	// body...
 	var login_message = req.cookies.login_message
 	if(!login_message){
 		res.render('error',{error:{message:"need login"}});
 	}
 
 	var messages = login_message.split(",");
-	console.log(messages[0]);
+	//TODO 这里先实现集体点餐的逻辑	
+	pool.getConnection(function (err,connection) {
+		// body...
+		var public_order_key = uuid.v1();
+		connection.query('insert into current_order set userId = ?, restaurantId = ?, orderKey = ? , type = ?',[messages[0],req.params.restaurant_id,public_order_key, 'public'],function  (err,result) {
+			// body...
+			if(err){
+				console.log(err);
+				connection.end();
+				res.render('error');
+				return;
+			}
 
-	// pool.getConnection(function (err,connection) {
+			connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant_id],function(err,rows) {
+			// body...
+			connection.end();
+			//res.setHeader('Content-Type','application/json;charset=UTF-8');
+			res.render('menu', {
+                menus: rows,
+                public_order_key:public_order_key,
+                restaurant:req.params.restaurant_id
+            });
+		})
+		})
 
-	// 	// body...
-	// 	connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[req.params.restaurant],function(err,rows) {
-	// 		// body...
-	// 		connection.end();
-	// 		if(err){
-	// 			res.render('error',{error:error});
-	// 		}
-	// 		//res.setHeader('Content-Type','application/json;charset=UTF-8');
-	// 		res.render('menu', {
- //                menus: rows,
- //                restaurant:req.params.restaurant
- //            });
-	// 	})
-	// });
+		
+	});
+}
+
+exports.publicOrder = function (req,res) {
+	// body...
+	//TODO 去掉这个方法,没有任何作用.
+	res.json({restaurant:req.params.restaurant});
 }
 
 exports.orderLink =  function (req,res) {
