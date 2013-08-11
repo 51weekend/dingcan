@@ -16,8 +16,6 @@ exports.login = function (req, res) {
 
 exports.checkLogin = function(req, res, next){
 
-  console.log(req.cookies.user_login_key);
-
   if (!req.cookies.user_login_key) {
     res.setHeader('Content-Type', 'application/json;charset=UTF-8');
     res.statusCode = 401;
