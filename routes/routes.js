@@ -2,6 +2,8 @@ var auth  = require('../models/auth');
 
 var restaurant = require('../models/restaurant');
 
+var RestaurantController = require('../controllers/restaurant');
+
 module.exports = function (app) {
   app.all('/order', auth.checkLogin);
 
@@ -19,9 +21,9 @@ module.exports = function (app) {
     res.redirect('back');
   });
 
-  app.get('/restaurants', restaurant.restaurants);
+  app.get('/restaurants', RestaurantController.index);
 
-  app.get('/menu/:restaurant_id',restaurant.menu);
+  app.get('/menu/:restaurant_id',RestaurantController.getMenuOfRestaurant);
 
   app.get('/public/order/:public_order_key',restaurant.publicOrder);
 

@@ -41,18 +41,18 @@ block content
               dataType : "json",
               success: function( json ) {
                 var html = "";
-                for(var i = 0 ;i<json.restaurants.length;i++){
+                for(var i = 0 ;i<json.length;i++){
                     html += "<div class='row panel panel-info'>" +
                              "<div class='col-8 col-sm-8 col-lg-8'>"+
                                "<dl>"+
-                                 "<h3><a href='/menu/"+json.restaurants[i].id+"'>" + json.restaurants[i].name+"</a></h3>"+
-                                 "<span><a href='/menu/"+json.restaurants[i].id+"'>看菜谱</a></span>" +
-                                 "<p class='text-warning'>电话：" + json.restaurants[i].phone+"</p>" +
+                                 "<h3><a href='/menu/"+json[i].id+"'>" + json[i].name+"</a></h3>"+
+                                 "<span><a href='/menu/"+json[i].id+"'>看菜谱</a></span>" +
+                                 "<p class='text-warning'>电话：" + json[i].phone+"</p>" +
                                "</dl>"+
                              "</div>"+
                              "<div class='col-4 col-sm-4 col-lg-4'>"+
                              "<br><p>"+
-                             "<button type='button' id='public_order' onClick='checkLogin(this);' class='btn btn-primary' restaurant='"+json.restaurants[i].id+"'>集体订餐</button>"+
+                             "<button type='button' id='public_order' onClick='checkLogin(this);' class='btn btn-primary' restaurant='"+json[i].id+"'>集体订餐</button>"+
                              "</p>"+
                              "</div>"+
                             "</div>";
