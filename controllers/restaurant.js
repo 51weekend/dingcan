@@ -16,13 +16,12 @@ exports.getMenuOfRestaurant = function (req,res,next) {
 
 	var login_message = req.cookies.login_message
 	if(!login_message){
-		res.send(500,{error: new Error('need login')});
+		res.send(500,{error: 'need login'});
 		return;
 	}
 
-	var messages = login_message.split(",");
 	var public_order_key = uuid.v1();
-	Restaurant.generateOrderKey(messages[0],req.params.restaurant_id,public_order_key,function (err,result) {
+	Restaurant.generateOrderKey(login_message.id,req.params.restaurant_id,public_order_key,function (err,result) {
 		// body...
 		if(err){
 			res.send(500, { error: err });
@@ -42,4 +41,14 @@ exports.getMenuOfRestaurant = function (req,res,next) {
 	        });
 		})
 	})
+}
+
+
+exports.publicOrder = function (req,res){
+	console.log(req.params.public_order_key);
+}
+
+
+exports.orderLink =  function (req,res) {
+	res.json({link_code:uuid.v1()});
 }
