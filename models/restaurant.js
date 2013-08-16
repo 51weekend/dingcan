@@ -13,12 +13,3 @@ exports.generateOrderKey = function (userId,restaurant_id,public_order_key,callb
 exports.getMenuOfRestaurant = function(restaurantId,callback) {
 	dbUtils.executeSql('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],callback);
 }
-
-exports.publicOrder = function (req,res){
-	console.log(req.params.public_order_key);
-}
-
-
-exports.orderLink =  function (req,res) {
-	res.json({link_code:uuid.v1()});
-}

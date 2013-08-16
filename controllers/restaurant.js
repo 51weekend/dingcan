@@ -19,17 +19,18 @@ exports.getMenuOfRestaurant = function (req,res,next) {
 		res.send(500,{error: 'need login'});
 		return;
 	}
-
 	var public_order_key = uuid.v1();
 	Restaurant.generateOrderKey(login_message.id,req.params.restaurant_id,public_order_key,function (err,result) {
 		// body...
 		if(err){
+			console.error(err);
 			res.send(500, { error: err });
 			return;
 		}
 
 		Restaurant.getMenuOfRestaurant(req.params.restaurant_id,function (err,menus) {
 			if(err){
+				console.error(err);
 				res.send(500, { error: err });
 				return;
 			}

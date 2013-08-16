@@ -32,7 +32,7 @@ exports.genarateToken = function (req,res,next) {
         }
          
         res.cookie('login_key', login_key);
-        res.cookie('login_message',{id:userId,name:req.session.user.nickname});
+        res.cookie('login_message',{name:req.session.user.nickname,id:userId});
         res.json({login_user_nickname:req.session.user.nickname})
     });
 	

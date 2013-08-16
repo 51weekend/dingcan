@@ -6,18 +6,7 @@
 var express = require('express')
   , http    = require('http')
   , path    = require('path')
-  , mysql   = require('mysql')
   , user    = require('./models/user');
-
-
-pool  = mysql.createPool({
-  host            : '42.121.117.61',
-  user            : 'dingcan',
-  password        : 'woshiniye!82',
-  database        : 'dingcan',
-  connectionLimit :5,
-  queueLimit      :10
-});
 
 uuid = require('node-uuid');
 

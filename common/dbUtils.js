@@ -1,3 +1,13 @@
+var mysql   = require('mysql');
+var pool  = mysql.createPool({
+  host            : '42.121.117.61',
+  user            : 'dingcan',
+  password        : 'woshiniye!82',
+  database        : 'dingcan',
+  connectionLimit :5,
+  queueLimit      :10
+});
+
 /**
  * 执行sql语句，支持增删改查
  * Callback:
