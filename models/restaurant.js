@@ -1,54 +1,17 @@
+var dbUtils = require('../common/dbUtils.js');
+
 exports.getAllrestaurants = function (callback) {
-
-	pool.getConnection(function(err, connection) {
-		if(err){
-			return callback(err);
-		}
-
-	  	connection.query( 'SELECT id,name,address,longitude,latitude,phone,description FROM restaurant', function(err, rows) {
-		    connection.end();
-		    if(err){
-		    	return callback(err);
-		    }
-			callback(rows);
-	  	});
-	});
-  
+	dbUtils.executeSql('SELECT id,name,address,longitude,latitude,phone,description FROM restaurant',[],callback);
 }
 
 exports.generateOrderKey = function (userId,restaurant_id,public_order_key,callback) {
 
 	//TODO 这里先实现集体点餐的逻辑	
-	pool.getConnection(function (err,connection) {
-		if(err){
-			return callback(err);
-		}
-		connection.query('insert into current_order set userId = ?, restaurantId = ?, orderKey = ? , type = ?',[userId,restaurant_id,public_order_key, 'public'],function  (err,result) {
-			connection.end();
-			if(err){
-				return callback(err);
-			}
-
-			callback(err,result);
-		})
-		
-	});
+	dbUtils.executeSql('insert into current_order set userId = ?, restaurantId = ?, orderKey = ? , type = ?',[userId,restaurant_id,public_order_key, 'public'],callback);
 }
 
-exports.getMenuOfRestaurant = function(restaurantId,next) {
-	pool.getConnection(function (err,connection) {
-		if(err){
-			return next(err);
-		}
-		connection.query('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],function menus(err,menus) {
-			connection.end();
-			if(err){
-				return next(err);
-			}
-			next(err,menus);
-		})
-
-	})
+exports.getMenuOfRestaurant = function(restaurantId,callback) {
+	dbUtils.executeSql('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],callback);
 }
 
 exports.publicOrder = function (req,res){
