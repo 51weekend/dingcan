@@ -46,6 +46,8 @@ block content
 				.modal-body
 					form#name_setting_form.form-horizontal
 						p
+							#set_nick_name_error
+						p
 							input#nickname.form-control(type='text', name='nickname', placeholder='名字', required='required')
 				.modal-footer
 					#add_car_btn.button.btn.btn-primary(type='button') 确定
@@ -80,6 +82,15 @@ block content
 				
 			});
 
+			$("#name_setting_form").validate({
+				rules: {
+					nickname: "required"
+				},
+				messages: {
+					nickname: "先给自己起个名字呗."
+				}
+			});
+
 
 			$('#add_car_btn').click(function () {
 				if(!$("#name_setting_form").valid()){
@@ -93,12 +104,16 @@ block content
 					complete: function(xhr, textStatus) {
 					},
 					success: function(data, textStatus, xhr) {
-						alert("success");
 						$('#name_setting').modal('hide');
 					},
 					error: function(xhr, textStatus, errorThrown) {
 						var error = JSON.parse(xhr.responseText);
-						alert("error");
+
+						var errorDiv = '<div class="alert">'+
+									'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+									error.message+
+									"</div>";
+						$("#set_nick_name_error").html(errorDiv);
 					}
 				});
 			})

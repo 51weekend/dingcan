@@ -49,7 +49,8 @@ exports.checkLogin = function(req, res){
 exports.setNickName = function(req,res,next) {
 	res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	if(!req.body.nickname){
-		res.send(400,{code:102400,message:'请给自己起个名字!'});
+		//TODO 定义一个错误类，错误码统一配置
+		res.send(400,{code:102400,message:'你还挺坏的,来了就先给自己起个名字呗!'});
 		return;
 	}
 	res.cookie('nickname',req.body.nickname);
