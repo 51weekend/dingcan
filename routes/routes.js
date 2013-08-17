@@ -1,6 +1,6 @@
 var Auth  = require('../controllers/auth');
-
 var Restaurant = require('../controllers/restaurant');
+var Order = require('../controllers/order');
 
 module.exports = function (app) {
   app.all('/order', Auth.checkLogin);
@@ -18,6 +18,9 @@ module.exports = function (app) {
     req.session.destroy();
     res.redirect('back');
   });
+
+  app.post('/addCar',Order.addCar);
+  app.post('/setNickName',Auth.setNickName);
 
   app.get('/restaurants', Restaurant.index);
 

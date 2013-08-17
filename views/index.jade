@@ -82,15 +82,15 @@ block content
           complete: function(xhr, textStatus) {
           },
           success: function(data, textStatus, xhr) {
-            self.location = "/menu/"+$(obj).attr('restaurant');
           },
           error: function(xhr, textStatus, errorThrown) {
-            // alert(xhr.responseText);
-            alert("error");
           },
           statusCode: {
             401: function() {
               $('#login').modal();
+            },
+            200: function(){
+              self.location = "/menu/"+$(obj).attr('restaurant');
             }
           }
         });
@@ -126,16 +126,14 @@ block content
             dataType: 'json',
             data: {username: $("#email").val(),password:$("#password").val()},
             complete: function(xhr, textStatus) {
-              //called when complete
             },
             success: function(data, textStatus, xhr) {
-              //called when successful
               $('#login').modal('hide')
               $("#login_user_nickname").html(data.login_user_nickname);
-              // self.location='top.htm';
+              //TODO 用户在点击的时候，设置一个隐藏域，这里直接进行跳转.
+              //- self.location = "/menu/"+$(obj).attr('restaurant');
             },
             error: function(xhr, textStatus, errorThrown) {
-              //called when there is an error
 
               var errorMessage = JSON.parse(xhr.responseText);
             

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"conso",
+				"console.log(message);"
+			],
+			[
+				"co",
+				"console.log(message);"
+			],
+			[
+				"restaurant",
+				"restaurantId"
+			],
+			[
+				"public",
+				"public_order_key"
+			],
+			[
+				"restarant",
+				"restaurant"
+			],
+			[
 				"page",
 				"pageClick"
 			],
@@ -27,13 +47,53 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 930,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/restaurant.js",
+			"settings":
+			{
+				"buffer_size": 1785,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/order.js",
+			"settings":
+			{
+				"buffer_size": 246,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/menu.jade",
+			"settings":
+			{
+				"buffer_size": 818,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 147.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"syn jq",
+				"Set Syntax: jQuery (JavaScript)"
+			],
 			[
 				"save",
 				"Project: Save As"
@@ -51,14 +111,6 @@
 				"Project: Add Folder"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"syn jq",
-				"Set Syntax: jQuery (JavaScript)"
-			],
-			[
 				"sync ",
 				"Set Syntax: JavaScript"
 			],
@@ -67,7 +119,7 @@
 				"File: Close All"
 			]
 		],
-		"width": 449.0
+		"width": 593.0
 	},
 	"console":
 	{
@@ -84,6 +136,24 @@
 	},
 	"file_history":
 	[
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/user.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/restaurant.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/controllers/auth.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/index.jade",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/auth.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/common/dbUtils.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/routes.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/controllers/restaurant.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/app.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/auth-routes.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/index.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/restaurant_routes.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/layout.jade",
+		"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/routes/auth-routes.js",
+		"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/routes/blog.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/restaurant.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/auth.js",
+		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/menu.jade",
 		"/Users/chengdong/dev/gitHub/djcode/dingcan/README.md",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/app.js",
@@ -193,23 +263,7 @@
 		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/model/TrustDegree.java",
 		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/service/base/ConfigurationProperties.java",
 		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-properties.xml",
-		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/assembly-application-server.xml",
-		"/C/dev/tool/java/workspace/family360/deploy/bin/service",
-		"/C/dev/tool/java/jetty-distribution-7.6.9/start.ini",
-		"/C/dev/tool/java/jetty-distribution-7.6.9/etc/jetty.conf",
-		"/C/dev/tool/java/workspace/family360/family360-core/pom.xml",
-		"/C/dev/tool/java/workspace/family360/family360-common/target/classes/redis-config.xml",
-		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/src/main/webapp/WEB-INF/web.xml",
-		"/C/dev/tool/java/workspace/family360/family360-notify/src/main/java/com/snda/family/notify/service/NotifyPubSub.java",
-		"/C/Users/jasonCheng/Desktop/converter",
-		"/C/dev/converter.sh",
-		"/C/dev/tool/java/workspace/family360/family360-common/src/main/resources/redis-config.xml",
-		"/C/dev/tool/java/workspace/family360/family360-api/src/main/java/com/snda/family/app/controller/PositionController.java",
-		"/C/dev/tool/java/jetty-distribution-7.6.9/bin/jetty.sh",
-		"/C/dev/tool/java/jetty-distribution-7.6.9/bin/jetty.bat",
-		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/java/com/snda/family/core/domain/ChatMessage.java",
-		"/C/dev/tool/java/workspace/family360/family360-dao/src/main/java/com/snda/family/core/domain/UserAuthentication.java",
-		"/C/Users/jasonCheng/Documents/GitHub/credis/pom.xml"
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/assembly-application-server.xml"
 	],
 	"find":
 	{
@@ -232,6 +286,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";\n",
+			"!'});\n",
+			"'});\n",
+			";\n",
+			"public_order_key",
+			"login",
+			"login_key",
+			"login",
+			"cookie",
+			"pool",
+			"error",
+			"auth",
+			"RestaurantController",
+			"req",
+			"executeSql",
+			"messages",
+			"restaurants",
+			"json",
+			"restaurants",
+			"obj",
+			"getBlogTags",
+			"publicOrder",
+			"();\n",
+			");\n",
+			",",
+			"?",
+			"restaurant_id",
+			"login_key",
+			"pool.getConnection",
+			"getConnection",
+			"connection",
+			"alert",
+			"params",
+			"password",
+			"required",
+			"xhr",
+			"require('./routes/auth')",
+			"');\n",
+			"')\n",
+			"restarant",
+			"li",
+			"\"",
+			"6",
+			"\"",
+			"6",
+			"\"",
 			"mysql",
 			"\"",
 			");'>",
@@ -320,7 +420,7 @@
 			"swiftsync-server1",
 			"DeliverService"
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -329,14 +429,123 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "controllers/restaurant.js",
+					"settings":
+					{
+						"buffer_size": 1785,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1242,
+								1242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 563.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/order.js",
+					"settings":
+					{
+						"buffer_size": 246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/menu.jade",
+					"settings":
+					{
+						"buffer_size": 818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -380,16 +589,92 @@
 		"selected_items":
 		[
 			[
-				"app.js",
-				"app.js"
+				"menu",
+				"dingcan/views/menu.jade"
 			],
 			[
 				"",
-				"README.md"
+				"dingcan/controllers/restaurant.js"
+			],
+			[
+				"order",
+				"dingcan/models/order.js"
+			],
+			[
+				"rest",
+				"dingcan/controllers/restaurant.js"
+			],
+			[
+				"index",
+				"dingcan/views/index.jade"
 			],
 			[
 				"inde",
-				"views/index.jade"
+				"dingcan/views/index.jade"
+			],
+			[
+				"restaurant",
+				"dingcan/models/restaurant.js"
+			],
+			[
+				"routes",
+				"dingcan/routes/routes.js"
+			],
+			[
+				"app",
+				"dingcan/app.js"
+			],
+			[
+				"auth",
+				"dingcan/routes/auth.js"
+			],
+			[
+				"me",
+				"dingcan/views/menu.jade"
+			],
+			[
+				"in",
+				"dingcan/routes/index.js"
+			],
+			[
+				"res",
+				"dingcan/routes/restaurant.js"
+			],
+			[
+				"l",
+				"dingcan/views/layout.jade"
+			],
+			[
+				"au",
+				"dingcan/routes/auth.js"
+			],
+			[
+				"aut",
+				"dingcan/routes/auth.js"
+			],
+			[
+				"restra",
+				"dingcan/routes/restaurant.js"
+			],
+			[
+				"resta",
+				"dingcan/routes/restaurant_routes.js"
+			],
+			[
+				"restauran",
+				"dingcan/routes/restaurant.js"
+			],
+			[
+				"restar",
+				"dingcan/routes/restaurant_routes.js"
+			],
+			[
+				"resant",
+				"dingcan/routes/restaurant.js"
+			],
+			[
+				"app.js",
+				"app.js"
 			]
 		],
 		"width": 0.0
@@ -399,6 +684,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"nodecli",
+				"/Users/chengdong/dev/gitHub/djcode/nodeclub/nodeclub.sublime-project"
+			],
 			[
 				"blog",
 				"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/blog.sublime-project"

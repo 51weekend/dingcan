@@ -5,14 +5,12 @@ exports.login = function (req,res,next) {
 	Auth.getUserByNameAndPassword(req.body.username,req.body.password,function(err,rows) {
 	      if(err){
 	        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-	        res.statusCode = 401;
-	        res.json(err);
+	        res.send(401,{error:err});
 	        return;
 	      }
 	      if(rows == null || rows.length == 0){
 	        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-	        res.statusCode = 401;
-	        res.json({error:"用户名或密码错误!"});
+	        res.send(401,{error:"用户名或密码错误!"});
 	        return;
 	      }
 	      req.session.user = rows[0];
@@ -23,17 +21,17 @@ exports.login = function (req,res,next) {
 exports.genarateToken = function (req,res,next) {
 	var login_key = uuid.v1();
 	var userId = req.session.user.id;
-
 	Auth.genarateToken(userId,login_key,function (err,result) {
 
         if(err){
-           	res.json(err);
+           	res.send(500, {error:err});
            	return;
         }
          
         res.cookie('login_key', login_key);
         res.cookie('login_message',{name:req.session.user.nickname,id:userId});
-        res.json({login_user_nickname:req.session.user.nickname})
+        res.cookie('nickname',req.session.user.nickname);
+        res.send(200,{login_user_nickname:req.session.user.nickname});
     });
 	
 }
@@ -41,11 +39,19 @@ exports.genarateToken = function (req,res,next) {
 exports.checkLogin = function(req, res){
   res.setHeader('Content-Type', 'application/json;charset=UTF-8');
   if (!req.cookies.login_key) {
-    res.statusCode = 401;
-    res.json({error : 'need to login!'});
+    res.send(401,{error : 'need to login!'})
     return;
   };
   
-  res.statusCode = 200;
-  res.json({});
+  res.send(200,{});
+}
+
+exports.setNickName = function(req,res,next) {
+	res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+	if(!req.body.nickname){
+		res.send(400,{code:102400,message:'请给自己起个名字!'});
+		return;
+	}
+	res.cookie('nickname',req.body.nickname);
+	res.send(200,{});
 }

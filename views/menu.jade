@@ -2,30 +2,104 @@ extends layout
 
 block content
 	.row
+		ol.breadcrumb
+			li
+				a(href='/') 首页
+			li.active 订餐
+	.row
 		.col-3.col-sm-3.col-lg-3
 		.col-6.col-sm-6.col-lg-6
+			-if(locals.error){
+			.alert.alert-danger
+				button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+				| #{error}.
+			-}else{
 			button.btn.btn-success(id='generateOrderUrl', type='button', value='#{restaurant}') 复制订餐地址给大家 
 			.text-success(id='orderLink') http://127.0.0.1:3000/public/order/#{public_order_key}
 			br
+			-}
+			
 		.col-3.col-sm-3.col-lg-3
-	each menu in menus
+
+	-if (locals.menus){
+
+	
 		.row
 			.col-3.col-sm-3.col-lg-3 
 			.col-6.col-sm-6.col-lg-6
-				.row.panel
-					.col-3.col-sm-3.col-lg-3 
-						p #{menu.name}
-					.col-3.col-sm-3.col-lg-3
-						p #{menu.price}
-					.col-3.col-sm-3.col-lg-3(id=#{menu.id},value='#{menu.id}')
+				table.table.table-hove
+					each menu in menus
+							tr
+								td #{menu.name}
+								td ￥#{menu.price}
+								td 
+									button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{menu.id}') 放入餐车
 			.col-3.col-sm-3.col-lg-3
 
-
+	-}
+	#name_setting.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4.modal-title 给自己起个大家都知道的名字
+				.modal-body
+					form#name_setting_form.form-horizontal
+						p
+							input#nickname.form-control(type='text', name='nickname', placeholder='名字', required='required')
+				.modal-footer
+					#add_car_btn.button.btn.btn-primary(type='button') 确定
 
 	script(type="text/javascript")
 		jQuery(document).ready(function($) {
 			// Stuff to do as soon as the DOM is ready;
 			$("#generateOrderUrl").click(function () {
 				alert($("#orderLink").html());
+			})
+
+			$("[id=addCar]").click(function() {
+				$.ajax({
+					url: '/addCar',
+					type: 'POST',
+					dataType: 'json',
+					data: {param1: 'value1'},
+					complete: function(xhr, textStatus) {
+
+					},
+					success: function(data, textStatus, xhr) {
+
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						var error = JSON.parse(xhr.responseText);
+						if(error.code == 1024400){
+							$('#name_setting').modal();
+						}
+
+					}
+				});
+				
+			});
+
+
+			$('#add_car_btn').click(function () {
+				if(!$("#name_setting_form").valid()){
+					return;
+				}
+				$.ajax({
+					url: '/setNickName',
+					type: 'POST',
+					dataType: 'json',
+					data: {nickname: $("#nickname").val()},
+					complete: function(xhr, textStatus) {
+					},
+					success: function(data, textStatus, xhr) {
+						alert("success");
+						$('#name_setting').modal('hide');
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						var error = JSON.parse(xhr.responseText);
+						alert("error");
+					}
+				});
 			})
 		});
