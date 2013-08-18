@@ -1,0 +1,42 @@
+extends layout
+
+block content
+	.row
+		ol.breadcrumb
+			li
+				a(href='/') 首页
+			li.active 添加餐馆
+	.row
+		.col-2.col-sm-2.col-lg-2
+		.col-8.col-sm-8.col-lg-8
+			.panel
+				.panel-heading
+					h3.panel-title 添加餐馆
+				.panel-body
+					form#restaurant_form.form-horizontal(method='POST', action='/restaurant')
+						.form-group
+							label.col-lg-2.control-label(for='name') 餐馆名称
+							.col-lg-10
+								input#name.form-control(name='name', placeholder='餐馆名称', required='required')
+						.form-group
+							label.col-lg-2.control-label(for='address') 餐馆地址
+							.col-lg-10
+								input#address.form-control(name='address', placeholder='餐馆地址', required='required')
+						.form-group
+							label.col-lg-2.control-label(for='phone') 电话
+							.col-lg-10
+								input#phone.form-control(type='phone', name='phone',placeholder='联系电话', required='required')
+						.form-group
+							.col-lg-offset-2.col-lg-10
+								button.btn.btn-default(type='submit') 添加餐馆
+		.col-2.col-sm-2.col-lg-2
+
+	script(type="text/javascript").
+
+			$(document).ready(function(){
+				$("#restaurant_form").validate();
+			})
+
+
+
+		

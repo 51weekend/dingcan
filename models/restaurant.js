@@ -17,3 +17,11 @@ exports.queryInfoByOrderKey = function(orderKey,callback){
 exports.getMenuOfRestaurant = function(restaurantId,callback) {
 	dbUtils.executeSql('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],callback);
 }
+
+exports.save = function(rname,address,phone,callback) {
+	dbUtils.executeSql('insert into restaurant set name=?,address=?,phone=?',[rname,address,phone],callback);
+}
+
+exports.saveMenu = function(name,price,restaurant,callback){
+	dbUtils.executeSql('insert into menu set name=?,price=?,restaurant=?',[name,price,restaurant],callback);
+}

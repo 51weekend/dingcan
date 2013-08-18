@@ -1,0 +1,68 @@
+extends layout
+
+block content
+	.row
+		ol.breadcrumb
+			li
+				a(href='/') 首页
+			li.active 餐馆菜单
+	.row
+		.col-2.col-sm-2.col-lg-2
+				button#addMenu.btn.btn-primary.btn-sm(type='button') 添加菜单
+		.col-8.col-sm-8.col-lg-8
+		.col-2.col-sm-2.col-lg-2
+
+	-if (locals.menus){
+	
+		.row
+			.col-2.col-sm-2.col-lg-2 
+			.col-5.col-sm-5.col-lg-5
+				table.table.table-hove
+					each menu in menus
+							tr
+								td #{menu.name}
+								if menu.price < 10
+									td 
+										p.text-success ￥#{menu.price}
+								else if menu.price >20
+									td 
+										p.text-danger ￥#{menu.price}
+								else
+									td 
+										p.text-warning ￥#{menu.price}
+			.col-1.col-sm-1.col-lg-1
+			.col-3.col-sm-3.col-lg-3
+			.col-1.col-sm-1.col-lg-1
+
+	-}
+	#add_menu.modal.fade
+		.modal-dialog
+			form#add_menu_form.form-horizontal(method='POST', action='/menu')
+				.modal-content
+					.modal-header
+						button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+						h4.modal-title 添加菜单
+					.modal-body
+							input#restaurant(type='hidden',name='restaurant', value='#{restaurant}')
+							p
+								#add_menu_error
+							p
+								input#name.form-control(type='text', name='name', placeholder='菜名', required='required')
+							p
+								input#price.form-control(type='number', name='price', placeholder='价格', required='required')
+					.modal-footer
+						button.btn.btn-primary(type='submit') 添加菜单
+
+	script(type="text/javascript")
+
+		jQuery(document).ready(function($) {
+		
+
+			$("#add_menu_form").validate();
+
+			$('#addMenu').click(function(){
+				$('#add_menu').modal();
+			});
+
+		
+		});

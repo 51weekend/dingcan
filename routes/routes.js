@@ -24,8 +24,11 @@ module.exports = function (app) {
   app.post('/setNickName',Auth.setNickName);
 
   app.get('/restaurants', Restaurant.index);
+  app.all('/restaurant',Restaurant.save);
+  app.get('/restaurant/:restaurantId',Restaurant.editRestaurantMenu)
 
   app.get('/menu/:restaurant_id',Restaurant.getMenuOfRestaurant);
+  app.post('/menu',Restaurant.saveMenu);
 
   app.get('/public/order/:public_order_key',Restaurant.publicOrder);
   app.get('/order/:order_key',Order.queryOrderByKey);
