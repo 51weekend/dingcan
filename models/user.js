@@ -1,8 +1,6 @@
+var dbUtils = require('../common/dbUtils');
 
-/*
- * GET users listing.
- */
-
-exports.list = function(req, res){
-  res.send("respond with a resource");
-};
+exports.register = function(username,password,nickname,phone,callback) {
+	// body...
+	dbUtils.executeSql('insert into user set username = ?, password = ?, nickname = ? , phone = ?',[username,password,nickname,phone],callback);
+}

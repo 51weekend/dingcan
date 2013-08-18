@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	.row
+		ol.breadcrumb
+			li
+				a(href='/') 首页
+			li.active 订餐详情
+	.row
+		.col-2.col-sm-2.col-lg-2
+		.col-8.col-sm-8.col-lg-8
+			p #{locals.message}
+		.col-2.col-sm-2.col-lg-2
+
+	-if (locals.orders){
+	
+		.row
+			.col-2.col-sm-2.col-lg-2 
+			.col-5.col-sm-5.col-lg-5
+				table.table.table-hove
+					each order in orders
+							tr
+								td #{order.username}
+								td #{order.menuName}
+								td #{order.price}
+								//- td 
+									//- button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{order.id}',price='#{order.price}',menuName='#{order.menuName}') 和他一样
+			.col-1.col-sm-1.col-lg-1
+			.col-3.col-sm-3.col-lg-3
+			.col-1.col-sm-1.col-lg-1
+
+	-}else{
+
+	-}

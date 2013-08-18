@@ -18,7 +18,8 @@ exports.getMenuOfRestaurant = function (req,res,next) {
 
 	var login_message = req.cookies.login_message
 	if(!login_message){
-		res.send(500,{error: 'need login'});
+		// res.send(500,{error: 'need login'});
+		res.render('login');
 		return;
 	}
 	var public_order_key = uuid.v1();
@@ -29,25 +30,12 @@ exports.getMenuOfRestaurant = function (req,res,next) {
 			return;
 		}
 
-		Restaurant.getMenuOfRestaurant(req.params.restaurant_id,function (err,menus) {
-			if(err){
-				console.error(err);
-				res.send(500, { error: err });
-				return;
-			}
-
-			res.render('menu', {
-				menus: menus,
-	            public_order_key:public_order_key,
-	            restaurant:req.params.restaurant_id
-	        });
-		})
+		res.redirect('/public/order/'+public_order_key);
 	})
 }
 
 
 exports.publicOrder = function (req,res){
-	console.log(req.params.public_order_key);
 	Order.getOrderByOrderKey(req.params.public_order_key,function(err,order) {
 		if(err){
 			console.error(err);

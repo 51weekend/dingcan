@@ -9,6 +9,7 @@ module.exports = function (app) {
   	res.render('index', { title: 'Express' });
   });
 
+  app.all('/register',Auth.register);
   app.post('/login', Auth.login);
   app.post('/login', Auth.genarateToken);
 
@@ -27,6 +28,7 @@ module.exports = function (app) {
   app.get('/menu/:restaurant_id',Restaurant.getMenuOfRestaurant);
 
   app.get('/public/order/:public_order_key',Restaurant.publicOrder);
+  app.get('/order/:order_key',Order.queryOrderByKey);
 
   app.post('/order/link',Restaurant.orderLink);
 }

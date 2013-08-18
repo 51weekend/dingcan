@@ -1,4 +1,5 @@
 var Auth = require('../models/auth');
+var User = require('../models/user');
 
 exports.login = function (req,res,next) {
 
@@ -50,9 +51,37 @@ exports.setNickName = function(req,res,next) {
 	res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	if(!req.body.nickname){
 		//TODO 定义一个错误类，错误码统一配置
-		res.send(400,{code:102400,message:'你还挺坏的,来了就先给自己起个名字呗!'});
+		res.send(400,{code:102400,message:'你还挺坏的,来了就先给自己起个名字呗auth!'});
 		return;
 	}
 	res.cookie('nickname',req.body.nickname);
 	res.send(200,{});
+}
+
+
+exports.register = function (req,res,next) {
+	if(req.method == 'GET'){
+		console.log('********');
+		res.render('register');
+		return;
+	}
+	console.log(req.body.username);
+	console.log(req.body.password);
+	console.log(req.body.nickname);
+	console.log(req.body.phone);
+	if(!req.body.username || !req.body.password || !req.body.nickname || !req.body.phone){
+		console.log("$$$$$$$$$$$$");
+		res.render('register',{code:102400,message:'请填写正确的参数'});
+		return;
+	}
+	User.register(req.body.username,req.body.password,req.body.nickname,req.body.phone,function(err,result) {
+		// body...
+		if(err){
+			console.error(err);
+			res.render('register',{code:1024401,message:'注册限制，请稍后再试.'});
+			return;
+		}
+
+		res.render('index');
+	})
 }

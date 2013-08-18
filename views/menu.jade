@@ -7,8 +7,8 @@ block content
 				a(href='/') 首页
 			li.active 订餐
 	.row
-		.col-3.col-sm-3.col-lg-3
-		.col-6.col-sm-6.col-lg-6
+		.col-2.col-sm-2.col-lg-2
+		.col-8.col-sm-8.col-lg-8
 			-if(locals.error){
 			.alert.alert-danger
 				button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
@@ -17,24 +17,50 @@ block content
 			button.btn.btn-success(id='generateOrderUrl', type='button', value='#{restaurant}') 复制订餐地址给大家 
 			.text-success(id='orderLink') http://127.0.0.1:3000/public/order/#{public_order_key}
 			br
+			p
+				#order_error
 			-}
 			
-		.col-3.col-sm-3.col-lg-3
+		.col-2.col-sm-2.col-lg-2
 
 	-if (locals.menus){
 
 	
 		.row
-			.col-3.col-sm-3.col-lg-3 
-			.col-6.col-sm-6.col-lg-6
+			.col-2.col-sm-2.col-lg-2 
+			.col-5.col-sm-5.col-lg-5
+				input#public_order_key(type='hidden', value='#{public_order_key}')
 				table.table.table-hove
 					each menu in menus
 							tr
 								td #{menu.name}
-								td ￥#{menu.price}
+								if menu.price < 10
+									td 
+										p.text-success ￥#{menu.price}
+								else if menu.price >20
+									td 
+										p.text-danger ￥#{menu.price}
+								else
+									td 
+										p.text-warning ￥#{menu.price}
 								td 
-									button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{menu.id}') 放入餐车
+									button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{menu.id}',price='#{menu.price}',menuName='#{menu.name}') 放入餐车
+			.col-1.col-sm-1.col-lg-1
 			.col-3.col-sm-3.col-lg-3
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title 我的餐车
+					.panel-body
+						table
+							tbody#car
+					.panel-footer
+						ul.list-inline
+							li
+								p 总价￥
+							li
+								p#total.text-success 0
+						button#order_confirm.btn.btn-primary(type='button') 点好了，就这些
+			.col-1.col-sm-1.col-lg-1
 
 	-}
 	#name_setting.modal.fade
@@ -50,9 +76,11 @@ block content
 						p
 							input#nickname.form-control(type='text', name='nickname', placeholder='名字', required='required')
 				.modal-footer
-					#add_car_btn.button.btn.btn-primary(type='button') 确定
+					#setting_name_btn.button.btn.btn-primary(type='button') 确定
 
 	script(type="text/javascript")
+
+		var cars = new Array();
 		jQuery(document).ready(function($) {
 			// Stuff to do as soon as the DOM is ready;
 			$("#generateOrderUrl").click(function () {
@@ -60,26 +88,19 @@ block content
 			})
 
 			$("[id=addCar]").click(function() {
-				$.ajax({
-					url: '/addCar',
-					type: 'POST',
-					dataType: 'json',
-					data: {param1: 'value1'},
-					complete: function(xhr, textStatus) {
-
-					},
-					success: function(data, textStatus, xhr) {
-
-					},
-					error: function(xhr, textStatus, errorThrown) {
-						var error = JSON.parse(xhr.responseText);
-						if(error.code == 1024400){
-							$('#name_setting').modal();
-						}
-
-					}
-				});
-				
+				var food = new Object();
+				food.id=$(this).attr("name");
+				food.name=$(this).attr("menuName");
+				food.price=$(this).attr("price");
+				cars.push(food);
+				var html = "";
+				var total = 0;
+				for(var i =0;i<cars.length;i++){
+					html +="<tr><td>"+cars[i].name+"</td><td>"+cars[i].price+"</td></tr>"
+					total +=parseInt(cars[i].price);
+				}
+				$("#car").html(html);
+				$("#total").html(total);
 			});
 
 			$("#name_setting_form").validate({
@@ -92,7 +113,7 @@ block content
 			});
 
 
-			$('#add_car_btn').click(function () {
+			$('#setting_name_btn').click(function () {
 				if(!$("#name_setting_form").valid()){
 					return;
 				}
@@ -113,7 +134,37 @@ block content
 									'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
 									error.message+
 									"</div>";
-						$("#set_nick_name_error").html(errorDiv);
+						$("#set_nick_name_error").html(errorDivmen);
+					}
+				});
+			});
+
+			$('#order_confirm').click(function() {
+				if(cars.length==0){
+					return;
+				}
+				$.ajax({
+					url: '/addCar',
+					type: 'POST',
+					dataType: 'json',
+					data: {order: cars,orderKey:$('#public_order_key').val()},
+					complete: function(xhr, textStatus) {
+
+					},
+					success: function(data, textStatus, xhr) {
+						self.location = "/order/"+$('#public_order_key').val();
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						var error = JSON.parse(xhr.responseText);
+						if(error.code == 1024400){
+							$('#name_setting').modal();
+						}else{
+							var errorDiv = '<div class="alert">'+
+										'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+										error.message+
+										"</div>";
+							$("#order_error").html(errorDiv);
+						}
 					}
 				});
 			})

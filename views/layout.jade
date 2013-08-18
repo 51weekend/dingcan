@@ -13,9 +13,13 @@ html
     
 
     .navbar.navbar-inverse
-      a.navbar-brand(href='#') Brand
+      a.navbar-brand(href='#') 肚子饿得咕咕叫了!
       p.navbar-text.pull-right
+        
+        - if(locals.user){
+          button.btn.btn-default.navbar-btn.pull-right(type='button') 收租子
+        - }
         a#login_user_nickname.navbar-link(href='#')
-      button.btn.btn-default.navbar-btn.pull-right(type='button') Sign in
+      
 
     block content
