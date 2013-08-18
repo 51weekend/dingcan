@@ -1,4 +1,4 @@
-var OrderDetail = require('../models/OrderDetail');
+var OrderDetail = require('../models/orderDetail');
 var Restaurant = require('../models/restaurant');
 
 exports.addCar = function(req,res,next) {
