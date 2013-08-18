@@ -36,15 +36,29 @@ exports.addCar = function(req,res,next) {
 
 exports.queryOrderByKey = function(req,res,next) {
 	// body...
+	console.log(req.query.dataType);
+	console.log(req.query.dataType);
+	console.log(req.query.dataType=='json')
 	if(!req.params.order_key){
-		res.render('order',{code:1024400,message:'不正确的订餐链接'});
+		if(req.query.dataType =='json'){
+			res.send(400,{code:1024400,message:'不正确的订餐链接'});
+		}else{
+			res.render('order',{code:1024400,message:'不正确的订餐链接'});
+		}
 		return;
 	}
 	OrderDetail.queryOrderByKey(req.params.order_key,function(err,orders) {
 		if(err){
-			res.render('order',{code:1024405,message:'服务忙，稍后再试.'});
+			if(req.query.dataType=='json'){
+				res.send(500,{code:1024405,message:'服务忙，稍后再试.'})
+			}else{
+				res.render('order',{code:1024405,message:'服务忙，稍后再试.'});
+			}
 		}
-		console.log(orders);
-		res.render('order',{orders:orders});
+		if(req.query.dataType=='json'){
+			res.send(200,{orders:orders,public_order_key:req.params.order_key});
+		}else{
+			res.render('order',{orders:orders,public_order_key:req.params.order_key});
+		}
 	})
 }

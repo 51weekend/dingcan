@@ -11,18 +11,18 @@ block content
 		.col-8.col-sm-8.col-lg-8
 			p #{locals.message}
 		.col-2.col-sm-2.col-lg-2
-
+		input#public_order_key(type='hidden', value='#{public_order_key}')
 	-if (locals.orders){
 	
 		.row
 			.col-2.col-sm-2.col-lg-2 
 			.col-5.col-sm-5.col-lg-5
-				table.table.table-hove
+				table#orderList.table.table-hove
 					each order in orders
-							tr
-								td #{order.username}
-								td #{order.menuName}
-								td #{order.price}
+						tr
+							td #{order.username}
+							td #{order.menuName}
+							td #{order.price}
 								//- td 
 									//- button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{order.id}',price='#{order.price}',menuName='#{order.menuName}') 和他一样
 			.col-1.col-sm-1.col-lg-1
@@ -32,3 +32,34 @@ block content
 	-}else{
 
 	-}
+
+	script(type="text/javascript", src="/js/jquery.timer.js")
+	script(type="text/javascript")
+		$( document ).ready(function(){
+			timer = $.timer(5000, function() {
+				if(!$('#public_order_key').val()){
+					return;
+				}
+				$.ajax({
+					url: '/order/'+$('#public_order_key').val(),
+					type: 'GET',
+					dataType: 'json',
+					data: {dataType: 'json'},
+					complete: function(xhr, textStatus) {
+					},
+					success: function(data, textStatus, xhr) {
+
+						var json = data.orders;
+						var html = '';
+						for (var i = 0 ; i< json.length; i++) {
+							html +='<tr><td>'+json[i].username+'</td><td>'+json[i].menuName+'</td><td>'+json[i].price+'</td></tr>'
+						};
+						$("#orderList").html(html);
+
+					},
+					error: function(xhr, textStatus, errorThrown) {
+					}
+				});
+				
+			});
+		});
