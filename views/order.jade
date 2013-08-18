@@ -9,7 +9,6 @@ block content
 	.row
 		.col-2.col-sm-2.col-lg-2
 		.col-8.col-sm-8.col-lg-8
-			p #{locals.message}
 		.col-2.col-sm-2.col-lg-2
 		input#public_order_key(type='hidden', value='#{public_order_key}')
 	-if (locals.orders){
@@ -17,6 +16,10 @@ block content
 		.row
 			.col-2.col-sm-2.col-lg-2 
 			.col-5.col-sm-5.col-lg-5
+				#tips
+					-if(!locals.orders || locals.orders.length == 0){
+						.alert 目前还没有人订餐
+					-}
 				table#orderList.table.table-hove
 					each order in orders
 						tr
@@ -27,6 +30,14 @@ block content
 									//- button.btn.btn-primary.btn-sm(type='button',id='addCar',name='#{order.id}',price='#{order.price}',menuName='#{order.menuName}') 和他一样
 			.col-1.col-sm-1.col-lg-1
 			.col-3.col-sm-3.col-lg-3
+				.panel.panel-primary
+						.panel-heading
+							h3.panel-title 餐馆信息
+						.panel-body
+							dl
+								h3 #{restaurant.name}
+								p.text-warning 电话： #{restaurant.phone}
+								p.text-warning 地址：#{restaurant.address}
 			.col-1.col-sm-1.col-lg-1
 
 	-}else{
@@ -50,11 +61,19 @@ block content
 					success: function(data, textStatus, xhr) {
 
 						var json = data.orders;
+						var total = 0;
 						var html = '';
 						for (var i = 0 ; i< json.length; i++) {
+							total += parseInt(json[i].price);
 							html +='<tr><td>'+json[i].username+'</td><td>'+json[i].menuName+'</td><td>'+json[i].price+'</td></tr>'
 						};
+
+						var tipsHtml = '<div class="alert">'+
+						'当前订餐'+json.length+'份,共计￥'+total+
+						'元</div>'
+
 						$("#orderList").html(html);
+						$("#tips").html(tipsHtml);
 
 					},
 					error: function(xhr, textStatus, errorThrown) {

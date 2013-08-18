@@ -10,6 +10,10 @@ exports.generateOrderKey = function (userId,restaurant_id,public_order_key,callb
 	dbUtils.executeSql('insert into current_order set userId = ?, restaurantId = ?, orderKey = ? , type = ?',[userId,restaurant_id,public_order_key, 'public'],callback);
 }
 
+exports.queryInfoByOrderKey = function(orderKey,callback){
+	dbUtils.executeSql('SELECT r.id,r.name,r.address,r.phone FROM current_order co, restaurant r where co.orderKey = ? and co.restaurantId = r.id',[orderKey],callback);
+}
+
 exports.getMenuOfRestaurant = function(restaurantId,callback) {
 	dbUtils.executeSql('SELECT id,name,price,image,description,restaurant FROM menu where restaurant = ? ',[restaurantId],callback);
 }
