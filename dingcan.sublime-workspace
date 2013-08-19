@@ -4,36 +4,8 @@
 		"selected_items":
 		[
 			[
-				"conso",
-				"console.log(message);"
-			],
-			[
-				"re",
-				"ready"
-			],
-			[
-				"me",
-				"menuName"
-			],
-			[
-				"e",
-				"each"
-			],
-			[
-				"co",
-				"console.log(message);"
-			],
-			[
-				"restaurant",
-				"restaurantId"
-			],
-			[
-				"public",
-				"public_order_key"
-			],
-			[
-				"restarant",
-				"restaurant"
+				"console",
+				"console.error(message);"
 			],
 			[
 				"page",
@@ -59,76 +31,48 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "controllers/order.js",
-			"settings":
-			{
-				"buffer_size": 1136,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/restaurant.js",
-			"settings":
-			{
-				"buffer_size": 1492,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 1018,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/layout.jade",
-			"settings":
-			{
-				"buffer_size": 890,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/auth.js",
-			"settings":
-			{
-				"buffer_size": 2402,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 173.0,
 		"selected_items":
 		[
 			[
-				"syn jq",
-				"Set Syntax: jQuery (JavaScript)"
+				"save",
+				"Project: Save As"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Nodejs::Default File Settings"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"save",
-				"Project: Save As"
-			],
-			[
-				"add  ",
+				"add fol",
 				"Project: Add Folder"
 			],
 			[
-				"open",
-				"View: Toggle Open Files in Side Bar"
+				"add f",
+				"Project: Add Folder"
 			],
 			[
 				"add folder",
 				"Project: Add Folder"
+			],
+			[
+				"syn jq",
+				"Set Syntax: jQuery (JavaScript)"
 			],
 			[
 				"sync ",
@@ -139,7 +83,7 @@
 				"File: Close All"
 			]
 		],
-		"width": 593.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -156,35 +100,21 @@
 	},
 	"file_history":
 	[
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/user.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/login.jade",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/restaurant.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/routes.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/register.jade",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/controllers/auth.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/orderDetail.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/order.jade",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/order.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/controllers/order.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/controllers/restaurant.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/app.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/index.jade",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/menu.jade",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/views/layout.jade",
-		"/Users/chengdong/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/models/auth.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/common/dbUtils.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/auth-routes.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/index.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/restaurant_routes.js",
-		"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/routes/auth-routes.js",
-		"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/routes/blog.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/restaurant.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/routes/auth.js",
-		"/Users/chengdong/dev/gitHub/djcode/dingcan/README.md",
-		"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project",
-		"/C/Users/jasonCheng/Documents/GitHub/dingcan/app.js",
+		"/C/dev/ftp/RadFTP-1.50F/readme.txt",
+		"/C/dev/tool/java/workspace/speed-test/speed-test-front/src/main/webapp/WEB-INF/views/sample.html",
+		"/C/Users/jasonCheng/Documents/GitHub/jQuery-Stickybox/index.html",
+		"/C/Users/jasonCheng/Documents/GitHub/jQuery-Stickybox/style/sticky.css",
+		"/C/dev/ftp/ZUpload/sample.html",
+		"/C/dev/ftp/RadFTPAppletDemo-2.0/web/applet.html",
 		"/C/Users/jasonCheng/Documents/GitHub/dingcan/views/index.jade",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/views/layout.jade",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/routes/restaurant.js",
+		"/C/Users/jasonCheng/AppData/Roaming/Sublime Text 2/Packages/Nodejs/Nodejs.sublime-settings",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/README.md",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/app.js",
+		"/C/Users/jasonCheng/AppData/Roaming/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/jasonCheng/AppData/Roaming/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project",
 		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-aop.xml",
 		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/statistics/StatisticsType.java",
 		"/C/dev/tool/java/workspace/family360/family360-common/src/main/java/com/snda/family/statistics/StatisticsInterceptor.java",
@@ -197,7 +127,6 @@
 		"/E/work/source/UI-Sample/ui-library/tips/js/tips-0.0.1.js",
 		"/C/dev/ftp/jdiskexplorer3.1/applet_ftp_explorer.html",
 		"/C/dev/ftp/jdiskexplorer3.1/applet_ftp_explorer.js",
-		"/C/dev/ftp/ZUpload/sample.html",
 		"/C/dev/ftp/jdiskexplorer3.1/server-side/jsp/explorer.jsp",
 		"/C/dev/ftp/sample.html",
 		"/C/Users/jasonCheng/Downloads/flowplayer-5.4.3/index.html",
@@ -283,7 +212,22 @@
 		"/C/Users/jasonCheng/Downloads/pom.xml",
 		"/C/Users/jasonCheng/.m2/settings.xml",
 		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/conf/settings.properties",
-		"/C/dev/tool/java/workspace/family360/pom.xml"
+		"/C/dev/tool/java/workspace/family360/pom.xml",
+		"/C/Users/jasonCheng/Desktop/service",
+		"/C/dev/tool/java/workspace/family360/family360-manager/src/main/resources/applicationContext-manager.xml",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/DBVisitControl.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/config/model/TrustDegree.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/java/com/snda/basicauthen/service/base/ConfigurationProperties.java",
+		"/C/dev/tool/java/workspace/FW_096SAS/sas-core/src/main/resources/sas-properties.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/assembly-application-server.xml",
+		"/C/dev/tool/java/workspace/family360/deploy/bin/service",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/start.ini",
+		"/C/dev/tool/java/jetty-distribution-7.6.9/etc/jetty.conf",
+		"/C/dev/tool/java/workspace/family360/family360-core/pom.xml",
+		"/C/dev/tool/java/workspace/family360/family360-common/target/classes/redis-config.xml",
+		"/C/dev/tool/java/workspace/SwiftSync-Server/trunk/swiftsync-core/src/main/webapp/WEB-INF/web.xml",
+		"/C/dev/tool/java/workspace/family360/family360-notify/src/main/java/com/snda/family/notify/service/NotifyPubSub.java",
+		"/C/Users/jasonCheng/Desktop/converter"
 	],
 	"find":
 	{
@@ -291,7 +235,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\dev\\tool\\java\\workspace\\family360",
@@ -306,72 +250,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"session",
-			"required",
-			"2",
+			"\")\n",
 			"model",
-			"name_setting",
-			"http://127.0.0.1:3000/public/order/ab1aa1b0-07d3-11e3-92d1-2ff29ed3fe20\naddCar",
-			"order_error",
-			"add_car_btn",
-			"car",
-			"8",
-			"6",
-			"3",
-			"5",
-			"error",
-			"\");\n",
-			"());\n",
-			"();\n",
-			"login_btn",
-			"login",
-			"='/')",
-			";\n",
-			"!'});\n",
-			"'});\n",
-			";\n",
-			"public_order_key",
-			"login",
-			"login_key",
-			"login",
-			"cookie",
-			"pool",
-			"error",
-			"auth",
-			"RestaurantController",
-			"req",
-			"executeSql",
-			"messages",
-			"restaurants",
-			"json",
-			"restaurants",
-			"obj",
-			"getBlogTags",
-			"publicOrder",
-			"();\n",
-			");\n",
-			",",
-			"?",
-			"restaurant_id",
-			"login_key",
-			"pool.getConnection",
-			"getConnection",
-			"connection",
-			"alert",
-			"params",
-			"password",
-			"required",
-			"xhr",
-			"require('./routes/auth')",
-			"');\n",
-			"')\n",
-			"restarant",
-			"li",
-			"\"",
-			"6",
-			"\"",
-			"6",
-			"\"",
+			"'));",
+			"insert into mysql.user(host,user,password) values('localhost','dingcan',password('woshiniye!82'));",
+			"));",
+			"‘",
+			"‘localhost’",
 			"mysql",
 			"\"",
 			");'>",
@@ -433,7 +318,22 @@
 			"PROJECT_ENV",
 			"assembly",
 			"JedisPoolConfig",
-			"publish"
+			"publish",
+			"jedisPool",
+			"DeliverService",
+			"qu",
+			"qun",
+			"getCacheProhibitVisiErrorThreshold",
+			"CACHE_PROHIBIT_VISIT_ERROR_THRESHOLD",
+			"cache.prohibitVisit.errorThreshold",
+			"pt(list)",
+			"java",
+			"JAVA",
+			"releases",
+			"distributionManagement",
+			"JSON.parseObject",
+			"fastjson",
+			"password"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -441,11 +341,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'));",
 			"../media/",
 			"swiftsync-server1",
 			"DeliverService"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -454,149 +355,14 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "controllers/order.js",
-					"settings":
-					{
-						"buffer_size": 1136,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "controllers/restaurant.js",
-					"settings":
-					{
-						"buffer_size": 1492,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								952,
-								952
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app.js",
-					"settings":
-					{
-						"buffer_size": 1018,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								697,
-								704
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 66.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/layout.jade",
-					"settings":
-					{
-						"buffer_size": 890,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								719,
-								719
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "controllers/auth.js",
-					"settings":
-					{
-						"buffer_size": 2402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 0.0
 	},
 	"input":
 	{
@@ -640,116 +406,20 @@
 		"selected_items":
 		[
 			[
-				"auth",
-				"dingcan/controllers/auth.js"
-			],
-			[
-				"la",
-				"dingcan/views/layout.jade"
-			],
-			[
-				"res",
-				"dingcan/controllers/restaurant.js"
-			],
-			[
-				"order",
-				"dingcan/controllers/order.js"
-			],
-			[
-				"layou",
-				"dingcan/views/layout.jade"
-			],
-			[
-				"menu",
-				"dingcan/views/menu.jade"
-			],
-			[
-				"inde",
-				"dingcan/views/index.jade"
-			],
-			[
 				"index",
-				"dingcan/views/index.jade"
-			],
-			[
-				"restaur",
-				"dingcan/controllers/restaurant.js"
-			],
-			[
-				"me",
-				"dingcan/views/menu.jade"
-			],
-			[
-				"indx",
-				"dingcan/views/index.jade"
-			],
-			[
-				"men",
-				"dingcan/views/menu.jade"
-			],
-			[
-				"",
-				"dingcan/views/index.jade"
-			],
-			[
-				"aut",
-				"dingcan/controllers/auth.js"
-			],
-			[
-				"re",
-				"dingcan/controllers/restaurant.js"
-			],
-			[
-				"rest",
-				"dingcan/controllers/restaurant.js"
-			],
-			[
-				"restaurant",
-				"dingcan/models/restaurant.js"
-			],
-			[
-				"routes",
-				"dingcan/routes/routes.js"
-			],
-			[
-				"app",
-				"dingcan/app.js"
-			],
-			[
-				"in",
-				"dingcan/routes/index.js"
-			],
-			[
-				"l",
-				"dingcan/views/layout.jade"
-			],
-			[
-				"au",
-				"dingcan/routes/auth.js"
-			],
-			[
-				"restra",
-				"dingcan/routes/restaurant.js"
-			],
-			[
-				"resta",
-				"dingcan/routes/restaurant_routes.js"
-			],
-			[
-				"restauran",
-				"dingcan/routes/restaurant.js"
-			],
-			[
-				"restar",
-				"dingcan/routes/restaurant_routes.js"
-			],
-			[
-				"resant",
-				"dingcan/routes/restaurant.js"
+				"views/index.jade"
 			],
 			[
 				"app.js",
 				"app.js"
+			],
+			[
+				"",
+				"README.md"
+			],
+			[
+				"inde",
+				"views/index.jade"
 			]
 		],
 		"width": 0.0
@@ -760,22 +430,18 @@
 		"selected_items":
 		[
 			[
-				"",
-				"/Users/chengdong/dev/gitHub/djcode/nodeclub/nodeclub.sublime-project"
+				"dingcan",
+				"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project"
 			],
 			[
-				"blog",
-				"/Users/chengdong/dev/gitHub/djcode/simple-node-blog/blog.sublime-project"
-			],
-			[
-				"nodecli",
-				"/Users/chengdong/dev/gitHub/djcode/nodeclub/nodeclub.sublime-project"
+				"dingcang",
+				"/C/Users/jasonCheng/Documents/GitHub/dingcan/dingcan.sublime-project"
 			]
 		],
 		"width": 380.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 184.0,
