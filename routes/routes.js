@@ -34,4 +34,6 @@ module.exports = function (app) {
   app.get('/order/:order_key',Order.queryOrderByKey);
 
   app.post('/order/link',Restaurant.orderLink);
+  app.get('/:userId/account',Order.account);
+  app.get('/accountDetail',Order.accountDetail);
 }
