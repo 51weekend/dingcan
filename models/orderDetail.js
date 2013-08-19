@@ -3,7 +3,7 @@ var dbUtils = require('../common/dbUtils.js');
 exports.save = function(nickname,orderKey,orders,callback) {
 	// body...
 	for(var i = 0 ;i<orders.length ; i++){
-		dbUtils.executeSql('insert into order_detail set username = ?, menuId = ?, menuName = ? , price = ?,orderKey = ?',[nickname,orders[0].id,orders[0].name,orders[0].price,orderKey],function(err,result) {
+		dbUtils.executeSql('insert into order_detail set username = ?, menuId = ?, menuName = ? , price = ?,orderKey = ?',[nickname,orders[i].id,orders[i].name,orders[i].price,orderKey],function(err,result) {
 			// body...
 			if(err){
 				callback(err);
