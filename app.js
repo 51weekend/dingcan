@@ -33,7 +33,11 @@ app.use(express.logger({stream: accessLogfile}));
 app.use(function(err, req, res, next){
   var meta = '[' + new Date() + '] ' + req.url + '\n';
   errorLogfile.write(meta + err.stack + '\n');
-  res.render('error',{error:err});
+  if (req.xhr) {
+    res.send(500, { error: error });
+  } else {
+  	res.render('error',{error:err});
+  }
 });
 
 
