@@ -3,6 +3,10 @@
  * Module dependencies.
  */
 
+var fs = require('fs');
+var accessLogfile = fs.createWriteStream('access.log', {flags: 'a'}); 
+var errorLogfile = fs.createWriteStream('error.log', {flags: 'a'});
+
 var express = require('express')
   , http    = require('http')
   , path    = require('path')
@@ -24,10 +28,15 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(function(req, res, next){
-    res.locals.user = req.session.user;
-    next();
+app.use(express.logger({stream: accessLogfile}));
+
+app.use(function(err, req, res, next){
+  var meta = '[' + new Date() + '] ' + req.url + '\n';
+  errorLogfile.write(meta + err.stack + '\n');
+  next();
 });
+
+
 
 
 // development only
