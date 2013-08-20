@@ -5,11 +5,19 @@ exports.login = function (req,res,next) {
 
 	Auth.getUserByNameAndPassword(req.body.username,req.body.password,function(err,rows) {
 	      if(err){
-	        res.send(401,{error:err});
+	      	if (req.xhr) {
+	      		res.send(401,{error:err});
+			} else {
+			  	res.render('login',{error:err});
+			}
 	        return;
 	      }
 	      if(rows == null || rows.length == 0){
-	        res.send(401,{error:"用户名或密码错误!"});
+	        if (req.xhr) {
+	      		res.send(401,{error:new Error("用户名或密码错误!")});
+			} else {
+			  	res.render('login',{error:new Error("用户名或密码错误!")});
+			}
 	        return;
 	      }
 	      req.session.user = rows[0];
