@@ -5,12 +5,10 @@ exports.login = function (req,res,next) {
 
 	Auth.getUserByNameAndPassword(req.body.username,req.body.password,function(err,rows) {
 	      if(err){
-	        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	        res.send(401,{error:err});
 	        return;
 	      }
 	      if(rows == null || rows.length == 0){
-	        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	        res.send(401,{error:"用户名或密码错误!"});
 	        return;
 	      }
@@ -38,7 +36,6 @@ exports.genarateToken = function (req,res,next) {
 }
 
 exports.checkLogin = function(req, res){
-  res.setHeader('Content-Type', 'application/json;charset=UTF-8');
   if (!req.cookies.login_key) {
     res.send(401,{error : 'need to login!'})
     return;
@@ -48,14 +45,16 @@ exports.checkLogin = function(req, res){
 }
 
 exports.setNickName = function(req,res,next) {
-	res.setHeader('Content-Type', 'application/json;charset=UTF-8');
 	if(!req.body.nickname){
-		//TODO 定义一个错误类，错误码统一配置
-		res.send(400,{code:102400,message:'你还挺坏的,来了就先给自己起个名字呗auth!'});
-		return;
+		throw new Error('你还挺坏的,来了就先给自己起个名字呗auth!');
 	}
 	res.cookie('nickname',req.body.nickname);
-	res.send(200,{});
+	if (req.xhr) {
+	    res.send(200,{});
+	} else {
+	  	res.render('index');
+	}
+	
 }
 
 
