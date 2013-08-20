@@ -38,7 +38,11 @@ exports.genarateToken = function (req,res,next) {
         res.cookie('login_key', login_key);
         res.cookie('login_message',{name:req.session.user.nickname,id:userId});
         res.cookie('nickname',req.session.user.nickname);
-        res.send(200,{login_user_nickname:req.session.user.nickname});
+        if(req.xhr){
+        	res.send(200,{login_user_nickname:req.session.user.nickname});
+        }else{
+        	res.render('index');
+        }
     });
 	
 }
