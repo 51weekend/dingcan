@@ -1,5 +1,6 @@
 var OrderDetail = require('../models/orderDetail');
 var Restaurant = require('../models/restaurant');
+var Order = require('../models/order');
 
 exports.addCar = function(req,res,next) {
 	// body...
@@ -46,7 +47,6 @@ exports.queryOrderByKey = function(req,res,next) {
 		return;
 	}
 
-
 	OrderDetail.queryOrderByKey(req.params.order_key,function(err,orders) {
 		if(err){
 			if(req.query.dataType=='json'){
@@ -71,5 +71,28 @@ exports.queryOrderByKey = function(req,res,next) {
 			}
 		})
 		
+	})
+}
+
+exports.account = function(req,res,next) {
+	Order.account(req.params.userId,function(err,accounts) {
+		if(err){
+			res.render('account',{code:1024505,message:'出账失败.请联系管理员.'})
+		}
+		console.log(accounts);
+		res.render('account',{accounts:accounts});
+
+	})
+
+}
+
+exports.accountDetail = function(req,res,next){
+	Order.accountDetail(req.query.username,function(err,details) {
+		if(err){
+			return res.send(500,{code:1024505,message:'查询账单明细出错.请联系管理员.'});
+		}
+		console.log(details);
+		res.send(200,{details:details});
+
 	})
 }

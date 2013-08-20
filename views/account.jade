@@ -1,0 +1,61 @@
+extends layout
+
+block content
+	.row
+		ol.breadcrumb
+			li
+				a(href='/') 首页
+			li.active 账单详情
+	.row
+		.col-2.col-sm-2.col-lg-2
+		.col-8.col-sm-8.col-lg-8
+		.col-2.col-sm-2.col-lg-2
+	-if (locals.accounts){
+	
+		.row
+			.col-2.col-sm-2.col-lg-2 
+			.col-5.col-sm-5.col-lg-5
+			
+				table#accountList.table.table-hove
+					each account in accounts
+						tr
+							td #{account.username}
+							td #{account.price}
+							td
+								button.btn.btn-primary.btn-sm(type='button',id='viewAccount',value='#{account.username}') 查看明细
+	-}
+
+
+	script(type="text/javascript")
+		jQuery(document).ready(function($) {
+			$("[id=viewAccount]").click(function() {
+				$.ajax({
+					url: '/accountDetail',
+					type: 'GET',
+					dataType: 'json',
+					data: {username:$(this).val()},
+					complete: function(xhr, textStatus) {
+					},
+					success: function(data, textStatus, xhr) {
+
+					var message = "TODO: ";
+					for(var i =0;i<data.details.length;i++){
+						message += data.details[i].createTime+"  "+data.details[i].menuName + "  ";
+					}
+						alert(message);
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						var error = JSON.parse(xhr.responseText);
+
+						var errorDiv = '<div class="alert">'+
+									'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+									error.message+
+									"</div>";
+					}
+				});
+			});
+
+		})
+			
+
+			

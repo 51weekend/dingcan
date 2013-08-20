@@ -83,71 +83,9 @@ block content
 	script(type="text/javascript", src="/js/stickysidebar.jquery.min.js")
 	script(type="text/javascript")
 
-		var cars = new Array();
-		jQuery(document).ready(function($) {
-			$("#myCar").stickySidebar({
-				timer: 400,
-				easing: "easeInOutBack"
-			});
-			// Stuff to do as soon as the DOM is ready;
-			$("#generateOrderUrl").click(function () {
-				alert($("#orderLink").html());
-			})
+		function addCar(){
 
-			$("[id=addCar]").click(function() {
-				var food = new Object();
-				food.id=$(this).attr("name");
-				food.name=$(this).attr("menuName");
-				food.price=$(this).attr("price");
-				cars.push(food);
-				var html = "";
-				var total = 0;
-				for(var i =0;i<cars.length;i++){
-					html +="<tr><td>"+cars[i].name+"</td><td>"+cars[i].price+"</td></tr>"
-					total +=parseInt(cars[i].price);
-				}
-				$("#car").html(html);
-				$("#total").html(total);
-			});
-
-			$("#name_setting_form").validate({
-				rules: {
-					nickname: "required"
-				},
-				messages: {
-					nickname: "先给自己起个名字呗."
-				}
-			});
-
-
-			$('#setting_name_btn').click(function () {
-				if(!$("#name_setting_form").valid()){
-					return;
-				}
-				$.ajax({
-					url: '/setNickName',
-					type: 'POST',
-					dataType: 'json',
-					data: {nickname: $("#nickname").val()},
-					complete: function(xhr, textStatus) {
-					},
-					success: function(data, textStatus, xhr) {
-						$('#name_setting').modal('hide');
-					},
-					error: function(xhr, textStatus, errorThrown) {
-						var error = JSON.parse(xhr.responseText);
-
-						var errorDiv = '<div class="alert">'+
-									'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
-									error.message+
-									"</div>";
-						$("#set_nick_name_error").html(errorDivmen);
-					}
-				});
-			});
-
-			$('#order_confirm').click(function() {
-				if(cars.length==0){
+			if(cars.length==0){
 					return;
 				}
 				$.ajax({
@@ -174,5 +112,86 @@ block content
 						}
 					}
 				});
+			
+		}
+
+		function innerCar(foods){
+			var html = "";
+			var total = 0;
+			for(var i =0;i<foods.length;i++){
+				html +="<tr><td>"+foods[i].name+"</td><td>"+foods[i].price+"</td><td><button id='cancel' type='button' class='btn btn-info btn-sm' value="+i+">取消</button></td></tr>"
+				total +=parseInt(foods[i].price);
+			}
+			$("#car").html(html);
+			$("#total").html(total);
+
+			$("[id=cancel]").click(function() {
+				foods.splice(parseInt($(this).val()), 1);
+				innerCar(foods);
+			});
+		}
+
+		var cars = new Array();
+		jQuery(document).ready(function($) {
+			$("#myCar").stickySidebar({
+				timer: 400,
+				easing: "easeInOutBack"
+			});
+			// Stuff to do as soon as the DOM is ready;
+			$("#generateOrderUrl").click(function () {
+				alert($("#orderLink").html());
+			})
+
+			$("[id=addCar]").click(function() {
+				var food = new Object();
+				food.id=$(this).attr("name");
+				food.name=$(this).attr("menuName");
+				food.price=$(this).attr("price");
+				cars.push(food);
+
+				innerCar(cars);
+
+			});
+
+			$("#name_setting_form").validate({
+				rules: {
+					nickname: "required"
+				},
+				messages: {
+					nickname: "先给自己起个名字呗."
+				}
+			});
+
+
+			$('#setting_name_btn').click(function () {
+				if(!$("#name_setting_form").valid()){
+					return;
+				}
+				$.ajax({
+					url: '/setNickName',
+					type: 'POST',
+					dataType: 'json',
+					data: {nickname: $("#nickname").val()},
+					complete: function(xhr, textStatus) {
+					},
+					success: function(data, textStatus, xhr) {
+						$('#name_setting').modal('hide');
+						addCar();
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						var error = JSON.parse(xhr.responseText);
+
+						var errorDiv = '<div class="alert">'+
+									'<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+									error.message+
+									"</div>";
+						$("#set_nick_name_error").html(errorDivmen);
+					}
+				});
+			});
+
+			$('#order_confirm').click(function() {
+				addCar();
 			})
 		});
+
