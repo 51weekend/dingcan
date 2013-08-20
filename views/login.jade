@@ -37,7 +37,7 @@ block content
   div.container
    form(method="post", class='form-signin', action="/login")
     h2.form-signin-heading 用户登录
-    input(type='text',class='input-block-level',placeholder="Email address")
-    input(type='password',class='input-block-level',placeholder="Password")
+    input(type='text',class='input-block-level', name="username",placeholder="Email address")
+    input(type='password',class='input-block-level',name="password",placeholder="Password")
     button(class='btn btn-large btn-primary',type="submit") 登录
 
